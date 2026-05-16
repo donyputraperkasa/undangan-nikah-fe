@@ -79,14 +79,14 @@ export default function HeroSection({
 
                 <div className="bg-white/80 backdrop-blur-md border border-white/70 rounded-3xl w-full max-w-md px-6 py-8 min-h-[120px] flex items-center justify-center relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent" />
-                    <h2 className="relative z-10 text-2xl md:text-3xl font-semibold text-[#5B4B8A] capitalize text-center leading-snug">
+                    <h2 className="relative z-10 text-lg md:text-3xl font-semibold text-[#5B4B8A] capitalize text-center leading-snug">
                         {guestName || "Tamu Undangan"}
                     </h2>
                 </div>
 
                 <div className="pt-4 w-full flex justify-center">
                     <Button onClick={handleOpenInvitation}>
-                        Buka Undangan
+                        Open Invitation
                     </Button>
                 </div>
             </Container>

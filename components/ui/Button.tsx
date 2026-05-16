@@ -20,6 +20,10 @@ export default function Button({
                 bg-[#A67C52]
                 px-8
                 py-4
+                flex
+                items-center
+                justify-center
+                text-center
                 text-sm
                 tracking-widest
                 text-white

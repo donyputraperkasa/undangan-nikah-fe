@@ -9,11 +9,9 @@ export default function GallerySection() {
 
     return (
         // 1. Mengembalikan lebar section ke w-full dan menambah padding vertikal (py-28 md:py-36)
-        <section className="w-full min-h-screen justify-between px-6 py-28 md:py-36 flex flex-col items-center text-center bg-[#F8F5F2]">
-            <div></div>
-            
+        <section className="w-full justify-between px-6 py-12 md:py-36 flex flex-col items-center text-center bg-[#F8F5F2]">
             {/* Header - Menghapus mt-5 yang tidak perlu karena sudah diatur oleh padding section */}
-            <div className="mb-16 md:mb-20">
+            <div className="mb-8 md:mb-20">
                 <p className="text-xs md:text-sm tracking-[0.4em] uppercase text-[#B08B57] mb-3">
                     Our Moments
                 </p>
@@ -21,8 +19,6 @@ export default function GallerySection() {
                     Our Gallery
                 </h2>
             </div>
-
-            <div className="mb-10 py-20"></div>
 
             {/* Gallery Grid - Membatasi lebar grid di sini agar simetris di tengah */}
             <div className="grid grid-cols-2 gap-4 md:gap-6 w-full max-w-md md:max-w-xl auto-rows-min mb-10">
@@ -33,14 +29,13 @@ export default function GallerySection() {
                     >
                         {/* Tempat taruh tag <img> nanti: */}
                         {/* <img src="..." className="w-full h-full object-cover" alt="Gallery" /> */}
-                        
                         {/* Overlay halus saat di-hover */}
                         <div className="absolute inset-0 bg-[#3B2F2F]/5 opacity-0 hover:opacity-100 transition-opacity duration-300" />
                     </div>
                 ))}
             </div>
 
-            <div className=""></div>
+            <div className="h-2" />
         </section>
     );
 }

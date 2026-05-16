@@ -6,6 +6,9 @@ import CountdownSection from "@/components/sections/CountdownSection";
 import EventSection from "@/components/sections/EventSection";
 import GallerySection from "@/components/sections/GallerySection";
 import RSVPSection from "@/components/sections/RSVPSection";
+import JourneySection from "@/components/sections/JourneySection";
+import MapSection from "@/components/sections/MapSection";
+import GiftSection from "@/components/sections/GiftSection";
 import WishSection from "@/components/sections/WishesSection";
 import ClosingSection from "@/components/sections/ClosingSection";
 import CreateByMe from "@/components/sections/CreateByMe";
@@ -25,7 +28,13 @@ export default function Home() {
 
             <EventSection />
 
+            <JourneySection />
+
             <GallerySection />
+
+            <MapSection />
+
+            <GiftSection />
 
             <RSVPSection />
 

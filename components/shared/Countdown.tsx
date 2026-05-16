@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Card from "../ui/Card";
-import Container from "../ui/Container";
-import SectionTitle from "../ui/SectionTitle";
 
 type TimeLeft = {
     days: number;
@@ -37,8 +35,11 @@ export default function Countdown() {
     };
 
     const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
+        setMounted(true);
+
         const timer = setInterval(() => {
             setTimeLeft(calculateTimeLeft());
         }, 1000);
@@ -46,51 +47,66 @@ export default function Countdown() {
         return () => clearInterval(timer);
     }, []);
 
+    if (!mounted) {
+        return (
+            <section className="w-full flex flex-col items-center justify-center">
+                <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 max-w-xl mx-auto">
+                    {[1, 2, 3, 4].map((item) => (
+                    <Card
+                        key={item}
+                        className="w-[100px] md:w-[120px] text-center rounded-[2rem] bg-white border border-white shadow-xl shadow-[#3B2F2F]/5 py-10"
+                    >
+                        <h3 className="text-2xl md:text-4xl font-bold text-[#3B2F2F] mb-2">
+                            0
+                        </h3>
+
+                        <p className="uppercase tracking-[0.15em] text-[9px] md:text-[11px] text-[#A67C52] whitespace-nowrap">
+                            Loading
+                        </p>
+                    </Card>
+                    ))}
+                </div>
+            </section>
+        );
+    }
+
     const items = [
         {
-            label: "Hari",
+            label: "Days",
             value: timeLeft.days,
         },
         {
-            label: "Jam",
+            label: "Hours",
             value: timeLeft.hours,
         },
         {
-            label: "Menit",
+            label: "Minutes",
             value: timeLeft.minutes,
         },
         {
-            label: "Detik",
+            label: "Seconds",
             value: timeLeft.seconds,
         },
     ];
 
     return (
-        <section className="py-24 bg-[#F4EFE6]">
-            <Container>
-                <SectionTitle
-                    subtitle="Save The Date"
-                    title="Wedding Countdown"
-                    description="Kami menantikan kehadiran Anda di hari bahagia kami."
-                />
+        <section className="w-full flex flex-col items-center justify-center">
+            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 max-w-xl mx-auto">
+                {items.map((item) => (
+                    <Card
+                        key={item.label}
+                        className="w-[100px] md:w-[120px] text-center rounded-[2rem] bg-white border border-white shadow-xl shadow-[#3B2F2F]/5 py-10 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
+                    >
+                        <h3 className="text-2xl md:text-4xl font-bold text-[#3B2F2F] mb-2">
+                            {item.value}
+                        </h3>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl mx-auto">
-                    {items.map((item) => (
-                        <Card
-                            key={item.label}
-                            className="text-center"
-                        >
-                            <h3 className="text-4xl md:text-5xl text-[#5B4B8A] mb-2">
-                                {item.value}
-                            </h3>
-
-                            <p className="uppercase tracking-[0.2em] text-sm text-[#A67C52]">
-                                {item.label}
-                            </p>
-                        </Card>
-                    ))}
-                </div>
-            </Container>
+                        <p className="uppercase tracking-[0.15em] text-[9px] md:text-[11px] text-[#A67C52] whitespace-nowrap">
+                            {item.label}
+                        </p>
+                    </Card>
+                ))}
+            </div>
         </section>
     );
 }
