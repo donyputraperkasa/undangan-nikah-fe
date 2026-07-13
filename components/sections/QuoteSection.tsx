@@ -1,5 +1,6 @@
 import Container from "../ui/Container";
 import { Leaf } from "lucide-react";
+import Image from "next/image";
 
 export default function QuoteSection() {
     return (
@@ -8,9 +9,11 @@ export default function QuoteSection() {
         >
             {/* Background Image */}
             <div className="absolute inset-0">
-                <img
+                <Image
                     src="/images/dummyfoto.png"
                     alt="Wedding Background"
+                    fill
+                    sizes="100vw"
                     className="w-full h-full object-cover object-center"
                 />
                 {/* Overlay - Menggunakan gradasi halus atau warna solid yang pas */}

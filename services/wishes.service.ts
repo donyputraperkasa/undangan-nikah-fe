@@ -5,21 +5,18 @@ export type WishPayload = {
     message: string;
 };
 
-export async function createWish(
-    invitationId: string,
-    payload: WishPayload
-) {
+export async function createWish(payload: WishPayload) {
     const response = await api.post(
-        `/wish/${invitationId}`,
+        "/wishes",
         payload
     );
 
     return response.data;
 }
 
-export async function getWishes(invitationId: string) {
+export async function getWishes() {
     const response = await api.get(
-        `/wish/${invitationId}`
+        "/wishes"
     );
 
     return response.data;

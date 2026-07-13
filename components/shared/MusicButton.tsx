@@ -53,7 +53,9 @@ export default function MusicButton() {
             />
 
             <button
+                type="button"
                 onClick={toggleMusic}
+                aria-label={isPlaying ? "Jeda musik" : "Putar musik"}
                 className="
                     fixed
                     bottom-6
@@ -65,7 +67,7 @@ export default function MusicButton() {
                     items-center
                     justify-center
                     rounded-full
-                    bg-[#A67C52]
+                    bg-[#273d35]
                     text-white
                     shadow-xl
                     transition-all

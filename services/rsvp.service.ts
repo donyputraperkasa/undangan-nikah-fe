@@ -7,20 +7,19 @@ export type RSVPPayload = {
 };
 
 export async function createRSVP(
-    invitationId: string,
     payload: RSVPPayload
 ) {
     const response = await api.post(
-        `/rsvp/${invitationId}`,
+        "/rsvp",
         payload
     );
 
     return response.data;
 }
 
-export async function getRSVPs(invitationId: string) {
+export async function getRSVPs() {
     const response = await api.get(
-        `/rsvp/${invitationId}`
+        "/rsvp"
     );
 
     return response.data;

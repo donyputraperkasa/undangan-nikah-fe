@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 type TimeLeft = {
     days: number;
@@ -10,7 +10,7 @@ type TimeLeft = {
 };
 
 export default function useCountdown(targetDate: string) {
-    const calculateTimeLeft = (): TimeLeft => {
+    const calculateTimeLeft = useCallback((): TimeLeft => {
         const difference = new Date(targetDate).getTime() - new Date().getTime();
 
         if (difference <= 0) {
@@ -28,7 +28,7 @@ export default function useCountdown(targetDate: string) {
             minutes: Math.floor((difference / (1000 * 60)) % 60),
             seconds: Math.floor((difference / 1000) % 60),
         };
-    };
+    }, [targetDate]);
 
     const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
 
@@ -38,7 +38,7 @@ export default function useCountdown(targetDate: string) {
         }, 1000);
 
         return () => clearInterval(interval);
-    }, [targetDate]);
+    }, [calculateTimeLeft]);
 
     return timeLeft;
 }

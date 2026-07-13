@@ -1,41 +1,40 @@
+import Image from "next/image";
+
+const galleryItems = [
+    { id: 1, className: "col-span-2 aspect-[16/10] md:col-span-4 md:row-span-2", position: "object-center" },
+    { id: 2, className: "aspect-[3/4] md:col-span-2 md:row-span-2", position: "object-left" },
+    { id: 3, className: "aspect-[3/4] md:col-span-2", position: "object-right" },
+    { id: 4, className: "aspect-[3/4] md:col-span-2", position: "object-[45%_center]" },
+];
+
 export default function GallerySection() {
-    // Array dummy untuk mempermudah mapping gambar nantinya
-    const galleryItems = [
-        { id: 1, bgClass: "bg-[#E7DED7]", colSpan: "col-span-1 h-[200px] md:h-[280px]" },
-        { id: 2, bgClass: "bg-[#D8CCC2]", colSpan: "col-span-1 h-[260px] md:h-[360px]" },
-        { id: 3, bgClass: "bg-[#DCCFC5]", colSpan: "col-span-1 h-[260px] md:h-[360px] -mt-14 md:-mt-20" },
-        { id: 4, bgClass: "bg-[#EAE2DB]", colSpan: "col-span-1 h-[200px] md:h-[280px]" },
-    ];
-
     return (
-        // 1. Mengembalikan lebar section ke w-full dan menambah padding vertikal (py-28 md:py-36)
-        <section className="w-full justify-between px-6 py-12 md:py-36 flex flex-col items-center text-center bg-[#F8F5F2]">
-            {/* Header - Menghapus mt-5 yang tidak perlu karena sudah diatur oleh padding section */}
-            <div className="mb-8 md:mb-20">
-                <p className="text-xs md:text-sm tracking-[0.4em] uppercase text-[#B08B57] mb-3">
-                    Our Moments
-                </p>
-                <h2 className="text-3xl md:text-5xl font-serif text-[#3B2F2F]">
-                    Our Gallery
-                </h2>
-            </div>
-
-            {/* Gallery Grid - Membatasi lebar grid di sini agar simetris di tengah */}
-            <div className="grid grid-cols-2 gap-4 md:gap-6 w-full max-w-md md:max-w-xl auto-rows-min mb-10">
-                {galleryItems.map((item) => (
-                    <div
-                        key={item.id}
-                        className={`relative overflow-hidden rounded-[2rem] shadow-md shadow-[#3B2F2F]/5 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl ${item.bgClass} ${item.colSpan}`}
-                    >
-                        {/* Tempat taruh tag <img> nanti: */}
-                        {/* <img src="..." className="w-full h-full object-cover" alt="Gallery" /> */}
-                        {/* Overlay halus saat di-hover */}
-                        <div className="absolute inset-0 bg-[#3B2F2F]/5 opacity-0 hover:opacity-100 transition-opacity duration-300" />
+        <section className="w-full bg-[#20342d] px-5 py-24 text-white md:px-8 md:py-36">
+            <div className="mx-auto max-w-6xl">
+                <header className="mb-12 flex flex-col justify-between gap-5 md:mb-16 md:flex-row md:items-end">
+                    <div>
+                        <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#d9b56f]">Our moments</p>
+                        <h2 className="mt-3 font-serif text-5xl leading-none md:text-7xl">Cerita dalam bingkai</h2>
                     </div>
-                ))}
-            </div>
+                    <p className="max-w-sm text-sm leading-7 text-white/60">Beberapa potongan cerita yang membawa kami sampai pada hari bahagia ini.</p>
+                </header>
 
-            <div className="h-2" />
+                <div className="grid grid-cols-2 gap-3 md:grid-cols-6 md:gap-5">
+                    {galleryItems.map((item) => (
+                        <figure key={item.id} className={`group relative min-h-48 overflow-hidden rounded-[1.5rem] bg-white/10 ${item.className}`}>
+                            <Image
+                                src="/images/dummyfoto.png"
+                                alt={`Momen kebersamaan Nugroho dan Agata ${item.id}`}
+                                fill
+                                sizes="(max-width: 768px) 50vw, 33vw"
+                                className={`object-cover transition duration-700 group-hover:scale-105 ${item.position}`}
+                            />
+                            <div className="absolute inset-0 bg-[#20342d]/10 transition group-hover:bg-transparent" />
+                        </figure>
+                    ))}
+                </div>
+                <p className="mt-8 text-center font-serif text-xl italic text-[#e6c98b]">“Every love story is beautiful, but ours is our favorite.”</p>
+            </div>
         </section>
     );
 }

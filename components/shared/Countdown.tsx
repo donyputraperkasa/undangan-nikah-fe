@@ -10,98 +10,52 @@ type TimeLeft = {
     seconds: number;
 };
 
-export default function Countdown() {
-    const weddingDate = new Date("2026-11-27T08:00:00").getTime();
+const WEDDING_DATE = new Date("2026-11-27T08:00:00+07:00").getTime();
+const EMPTY_TIME: TimeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
 
-    const calculateTimeLeft = (): TimeLeft => {
-        const now = new Date().getTime();
-        const difference = weddingDate - now;
+function calculateTimeLeft(): TimeLeft {
+    const difference = WEDDING_DATE - Date.now();
 
-        if (difference <= 0) {
-            return {
-                days: 0,
-                hours: 0,
-                minutes: 0,
-                seconds: 0,
-            };
-        }
+    if (difference <= 0) return EMPTY_TIME;
 
-        return {
-            days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-            hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-            minutes: Math.floor((difference / (1000 * 60)) % 60),
-            seconds: Math.floor((difference / 1000) % 60),
-        };
+    return {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / (1000 * 60)) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
     };
+}
 
-    const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
-    const [mounted, setMounted] = useState(false);
+export default function Countdown() {
+    const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
 
     useEffect(() => {
-        setMounted(true);
-
-        const timer = setInterval(() => {
+        const timer = window.setInterval(() => {
             setTimeLeft(calculateTimeLeft());
         }, 1000);
 
-        return () => clearInterval(timer);
+        return () => window.clearInterval(timer);
     }, []);
 
-    if (!mounted) {
-        return (
-            <section className="w-full flex flex-col items-center justify-center">
-                <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 max-w-xl mx-auto">
-                    {[1, 2, 3, 4].map((item) => (
-                    <Card
-                        key={item}
-                        className="w-[100px] md:w-[120px] text-center rounded-[2rem] bg-white border border-white shadow-xl shadow-[#3B2F2F]/5 py-10"
-                    >
-                        <h3 className="text-2xl md:text-4xl font-bold text-[#3B2F2F] mb-2">
-                            0
-                        </h3>
-
-                        <p className="uppercase tracking-[0.15em] text-[9px] md:text-[11px] text-[#A67C52] whitespace-nowrap">
-                            Loading
-                        </p>
-                    </Card>
-                    ))}
-                </div>
-            </section>
-        );
-    }
-
     const items = [
-        {
-            label: "Days",
-            value: timeLeft.days,
-        },
-        {
-            label: "Hours",
-            value: timeLeft.hours,
-        },
-        {
-            label: "Minutes",
-            value: timeLeft.minutes,
-        },
-        {
-            label: "Seconds",
-            value: timeLeft.seconds,
-        },
+        { label: "Hari", value: timeLeft?.days ?? 0 },
+        { label: "Jam", value: timeLeft?.hours ?? 0 },
+        { label: "Menit", value: timeLeft?.minutes ?? 0 },
+        { label: "Detik", value: timeLeft?.seconds ?? 0 },
     ];
 
     return (
-        <section className="w-full flex flex-col items-center justify-center">
-            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 max-w-xl mx-auto">
+        <section className="flex w-full flex-col items-center justify-center">
+            <div className="mx-auto grid w-full max-w-2xl grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
                 {items.map((item) => (
                     <Card
                         key={item.label}
-                        className="w-[100px] md:w-[120px] text-center rounded-[2rem] bg-white border border-white shadow-xl shadow-[#3B2F2F]/5 py-10 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
+                        className="rounded-[1.5rem] border border-white bg-white py-7 text-center shadow-xl shadow-[#3B2F2F]/5 transition duration-500 hover:-translate-y-1 hover:shadow-2xl md:py-10"
                     >
-                        <h3 className="text-2xl md:text-4xl font-bold text-[#3B2F2F] mb-2">
-                            {item.value}
+                        <h3 className="font-serif text-4xl font-semibold text-[#273d35] md:text-5xl">
+                            {String(item.value).padStart(2, "0")}
                         </h3>
-
-                        <p className="uppercase tracking-[0.15em] text-[9px] md:text-[11px] text-[#A67C52] whitespace-nowrap">
+                        <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.2em] text-[#A67C52] md:text-[11px]">
                             {item.label}
                         </p>
                     </Card>
