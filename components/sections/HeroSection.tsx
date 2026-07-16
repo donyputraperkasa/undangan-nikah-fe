@@ -16,13 +16,22 @@ export default function HeroSection({ guestName = "Tamu Undangan" }: HeroSection
     return (
         <section className="relative min-h-[100svh] w-full overflow-hidden bg-[#20342d] text-white">
             <Image
-                src="/images/dummyfoto.png"
-                alt="Nugroho dan Agata"
+                src="/images/naruto-hinata-prewed.png"
+                alt=""
                 fill
-                preload
                 sizes="100vw"
-                className="object-cover object-center"
+                className="scale-110 object-cover object-center opacity-45 blur-2xl"
             />
+            <div className="absolute inset-y-0 left-1/2 w-full max-w-[52rem] -translate-x-1/2">
+                <Image
+                    src="/images/naruto-hinata-prewed.png"
+                    alt="Ilustrasi prewedding Nugroho dan Agata"
+                    fill
+                    preload
+                    sizes="(max-width: 832px) 100vw, 832px"
+                    className="object-contain object-center"
+                />
+            </div>
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(16,29,24,.28)_0%,rgba(16,29,24,.42)_42%,rgba(16,29,24,.94)_100%)]" />
             <div className="absolute inset-x-4 top-4 bottom-4 rounded-[2rem] border border-white/20 md:inset-x-7 md:top-7 md:bottom-7" />
 

@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 const galleryItems = [
-    { id: 1, className: "col-span-2 aspect-[16/10] md:col-span-4 md:row-span-2", position: "object-center" },
-    { id: 2, className: "aspect-[3/4] md:col-span-2 md:row-span-2", position: "object-left" },
-    { id: 3, className: "aspect-[3/4] md:col-span-2", position: "object-right" },
-    { id: 4, className: "aspect-[3/4] md:col-span-2", position: "object-[45%_center]" },
+    { id: 1, className: "col-span-2 aspect-[16/10] md:col-span-4 md:row-span-2" },
+    { id: 2, className: "aspect-[3/4] md:col-span-2 md:row-span-2" },
+    { id: 3, className: "aspect-[3/4] md:col-span-2" },
+    { id: 4, className: "aspect-[3/4] md:col-span-2" },
 ];
 
 export default function GallerySection() {
@@ -23,11 +23,18 @@ export default function GallerySection() {
                     {galleryItems.map((item) => (
                         <figure key={item.id} className={`group relative min-h-48 overflow-hidden rounded-[1.5rem] bg-white/10 ${item.className}`}>
                             <Image
-                                src="/images/dummyfoto.png"
+                                src="/images/naruto-hinata-prewed.png"
+                                alt=""
+                                fill
+                                sizes="(max-width: 768px) 50vw, 33vw"
+                                className="scale-110 object-cover opacity-45 blur-xl"
+                            />
+                            <Image
+                                src="/images/naruto-hinata-prewed.png"
                                 alt={`Momen kebersamaan Nugroho dan Agata ${item.id}`}
                                 fill
                                 sizes="(max-width: 768px) 50vw, 33vw"
-                                className={`object-cover transition duration-700 group-hover:scale-105 ${item.position}`}
+                                className="object-contain object-center transition duration-700 group-hover:scale-[1.02]"
                             />
                             <div className="absolute inset-0 bg-[#20342d]/10 transition group-hover:bg-transparent" />
                         </figure>

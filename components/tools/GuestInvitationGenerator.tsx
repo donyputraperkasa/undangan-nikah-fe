@@ -121,7 +121,7 @@ export default function GuestInvitationGenerator() {
                         <p className="min-h-12 break-all text-sm leading-6 text-white/90">
                             {invitationUrl || "Isi slug dan nama tamu untuk membuat tautan."}
                         </p>
-                        <div className="mt-4 grid grid-cols-2 gap-3">
+                        <div className="mt-4 grid gap-3 sm:grid-cols-2">
                             <button
                                 type="button"
                                 disabled={!invitationUrl}

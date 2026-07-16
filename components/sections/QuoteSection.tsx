@@ -10,11 +10,18 @@ export default function QuoteSection() {
             {/* Background Image */}
             <div className="absolute inset-0">
                 <Image
-                    src="/images/dummyfoto.png"
-                    alt="Wedding Background"
+                    src="/images/naruto-hinata-prewed.png"
+                    alt=""
                     fill
                     sizes="100vw"
-                    className="w-full h-full object-cover object-center"
+                    className="scale-110 object-cover object-center opacity-70 blur-2xl"
+                />
+                <Image
+                    src="/images/naruto-hinata-prewed.png"
+                    alt="Ilustrasi prewedding pasangan"
+                    fill
+                    sizes="(max-width: 832px) 100vw, 832px"
+                    className="object-contain object-center"
                 />
                 {/* Overlay - Menggunakan gradasi halus atau warna solid yang pas */}
                 <div className="absolute inset-0 bg-[#B89472]/70 mix-blend-multiply" />

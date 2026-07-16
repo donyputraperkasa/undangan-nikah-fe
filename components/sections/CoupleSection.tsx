@@ -7,14 +7,12 @@ const people = [
         name: "Ignasius Dwi Cahyo Nugroho",
         nickname: "Nugroho",
         parents: "Putra dari Bapak Antonius & Ibu Maria",
-        position: "object-[48%_center]",
     },
     {
         role: "Mempelai Wanita",
         name: "Agata",
         nickname: "Agata",
         parents: "Putri dari Bapak Yohanes & Ibu Theresia",
-        position: "object-[55%_center]",
     },
 ];
 
@@ -31,28 +29,32 @@ export default function CoupleSection() {
                     </p>
                 </header>
 
-                <div className="grid gap-8 md:grid-cols-2 md:gap-10">
-                    {people.map((person, index) => (
-                        <article key={person.role} className={index === 1 ? "md:mt-20" : ""}>
-                            <div className="group relative aspect-[4/5] overflow-hidden rounded-[10rem_10rem_1.75rem_1.75rem] bg-[#d8cbb9] shadow-[0_26px_70px_rgba(58,44,34,.14)]">
-                                <Image
-                                    src="/images/dummyfoto.png"
-                                    alt={person.name}
-                                    fill
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                    className={`object-cover transition duration-700 group-hover:scale-105 ${person.position}`}
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#1e332b]/85 via-transparent to-transparent" />
-                                <p className="absolute bottom-6 left-6 text-xs font-bold uppercase tracking-[0.3em] text-[#f1d99f]">{person.role}</p>
-                            </div>
-                            <div className="px-3 pt-7 text-center">
-                                <p className="font-serif text-4xl font-semibold text-[#273d35] md:text-5xl">{person.nickname}</p>
-                                <p className="mt-2 text-sm font-semibold text-[#564b40]">{person.name}</p>
-                                <p className="mt-2 text-xs leading-6 text-[#8a7a6b]">{person.parents}</p>
-                                <span className="mx-auto mt-5 flex size-9 items-center justify-center rounded-full border border-[#c9b28d] text-[#ad7f45]">
-                                    <AtSign size={15} />
-                                </span>
-                            </div>
+                <div className="mx-auto max-w-xl">
+                    <figure className="relative aspect-[864/1821] w-full overflow-hidden rounded-[12rem_12rem_2rem_2rem] bg-[#d8cbb9] shadow-[0_26px_70px_rgba(58,44,34,.16)]">
+                        <Image
+                            src="/images/naruto-hinata-prewed.png"
+                            alt="Ilustrasi prewedding pasangan"
+                            fill
+                            sizes="(max-width: 640px) 100vw, 576px"
+                            className="object-contain object-center"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#1e332b]/55 via-transparent to-transparent" />
+                        <p className="absolute inset-x-5 bottom-6 text-center text-xs font-bold uppercase tracking-[0.3em] text-[#f1d99f]">
+                            Together is a beautiful place to be
+                        </p>
+                    </figure>
+                </div>
+
+                <div className="relative z-10 mx-auto -mt-2 grid max-w-4xl gap-4 sm:grid-cols-2 md:-mt-14 md:gap-6">
+                    {people.map((person) => (
+                        <article key={person.role} className="rounded-[1.75rem] border border-[#ded2c0] bg-white/90 p-6 text-center shadow-[0_18px_50px_rgba(58,44,34,.10)] backdrop-blur md:p-8">
+                            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ad7f45]">{person.role}</p>
+                            <h3 className="mt-3 font-serif text-4xl font-semibold text-[#273d35] md:text-5xl">{person.nickname}</h3>
+                            <p className="mt-2 text-sm font-semibold text-[#564b40]">{person.name}</p>
+                            <p className="mt-2 text-xs leading-6 text-[#8a7a6b]">{person.parents}</p>
+                            <span className="mx-auto mt-5 flex size-9 items-center justify-center rounded-full border border-[#c9b28d] text-[#ad7f45]">
+                                <AtSign size={15} />
+                            </span>
                         </article>
                     ))}
                 </div>

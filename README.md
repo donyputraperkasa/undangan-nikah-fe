@@ -50,7 +50,7 @@ npm run start
 ## Mengirim undangan melalui WhatsApp
 
 1. Jalankan frontend.
-2. Buka `http://localhost:3000/kirim-undangan`.
+2. Buka `http://localhost:3000/hay-apin-mochi`.
 3. Isi slug undangan, misalnya `nugroho-agata`.
 4. Isi nama tamu, misalnya `Bapak Budi & Keluarga`.
 5. Isi nomor WhatsApp tamu, misalnya `081234567890`.
@@ -73,7 +73,7 @@ Strukturnya adalah:
 https://domain-anda.com/{slug}?to={nama-tamu}
 ```
 
-Gunakan halaman `/kirim-undangan` agar nama dan karakter khusus diubah ke format URL secara otomatis. Tidak perlu menulis `%20` secara manual.
+Gunakan halaman `/hay-apin-mochi` agar nama dan karakter khusus diubah ke format URL secara otomatis. Tidak perlu menulis `%20` secara manual.
 
 ## Menjalankan dengan backend
 
@@ -101,10 +101,10 @@ undangan-nikah/
 
 ## Mengganti data dan foto
 
-Foto dummy saat ini berada di:
+Foto ilustrasi prewedding demo saat ini berada di:
 
 ```text
-public/images/dummyfoto.png
+public/images/naruto-hinata-prewed.png
 ```
 
 Foto tersebut dapat diganti menggunakan nama file yang sama. Jika menggunakan nama berbeda, sesuaikan path gambar pada komponen di `components/sections`.

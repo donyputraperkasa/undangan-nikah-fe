@@ -5,6 +5,10 @@ import Link from "next/link";
 export const metadata = {
     title: "Kirim Undangan Tamu | Nugroho & Agata",
     description: "Buat tautan undangan personal dan kirim langsung melalui WhatsApp.",
+    robots: {
+        index: false,
+        follow: false,
+    },
 };
 
 export default function SendInvitationPage() {
