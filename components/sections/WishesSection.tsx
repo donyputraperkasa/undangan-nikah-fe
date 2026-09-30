@@ -89,80 +89,100 @@ export default function WishSection({ guestName = "" }: WishSectionProps) {
             active = false;
         };
     }, []);
+
     return (
-        <section className="w-full max-w-4xl min-h-screen justify-between px-6 py-12 md:py-44 flex flex-col items-center text-center bg-[#F8F5F2]">
+        <section id="wishes-section" className="w-full max-w-4xl px-6 py-20 md:py-28 flex flex-col items-center text-center bg-[#FAF7F2] border-t border-[#EFE8DD]">
             {/* Header */}
-            <div className="mb-8">
-                <p className="text-xs md:text-sm tracking-[0.4em] uppercase text-[#B08B57] mb-4">
-                    Wedding Wishes
+            <div className="mb-10">
+                <p className="text-xs md:text-sm tracking-[0.4em] uppercase text-[#A67C52] font-semibold mb-3">
+                    Ucapan &amp; Doa Restu
                 </p>
-                <h2 className="text-4xl md:text-6xl font-serif text-[#3B2F2F] leading-tight">
-                    Send Your Wishes
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#2E335B] leading-tight">
+                    Kirim Doa &amp; Harapan
                 </h2>
+                <p className="mt-3 text-sm text-[#6B5E78] max-w-md mx-auto">
+                    Tuliskan ucapan selamat dan doa terbaik Anda untuk kedua mempelai.
+                </p>
             </div>
 
-            {/* Form Wishes - Dibuat lebih elegan dengan shadow halus */}
-            <div className="w-full max-w-lg bg-white p-8 md:p-14 text-center py-12 mb-16 border border-white">
-                <div className="flex flex-col gap-8">
+            {/* Form Wishes */}
+            <div className="w-full max-w-lg rounded-[2rem] border border-[#E6DCCE] bg-white/90 p-8 md:p-10 shadow-xl shadow-[#A67C52]/5 mb-14 backdrop-blur">
+                <div className="flex flex-col gap-5">
                     {/* Input Name */}
-                    <div className="space-y-3">
+                    <div className="space-y-2 text-left">
+                        <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#A67C52]">
+                            Nama Anda
+                        </label>
                         <input
                             type="text"
-                            placeholder="Your Name"
+                            placeholder="Tuliskan nama Anda"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
-                            className="w-full max-w-md rounded border border-[#E7DDD4] bg-[#FCFAF8] px-6 py-4 text-base text-[#3B2F2F] placeholder:text-[#B8ACA1] outline-none focus:border-[#B08B57] focus:ring-1 focus:ring-[#B08B57] transition-all"
+                            className="w-full rounded-2xl border border-[#E6DCCE] bg-[#FAF4EB] px-5 py-3.5 text-sm text-[#2E335B] placeholder:text-[#A89B8E] outline-none focus:border-[#5B4B8A] focus:ring-4 focus:ring-[#5B4B8A]/10 transition-all"
                         />
                     </div>
                     {/* Input Wishes */}
-                    <div className="space-y-3">
+                    <div className="space-y-2 text-left">
+                        <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#A67C52]">
+                            Pesan / Doa
+                        </label>
                         <textarea
-                            placeholder="Input your wishes"
+                            placeholder="Tuliskan ucapan dan doa restu untuk Agata & Nugroho..."
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
-                            rows={5}
-                            className="w-full max-w-md rounded border border-[#E7DDD4] bg-[#FCFAF8] px-6 py-5 text-base text-[#3B2F2F] placeholder:text-[#B8ACA1] outline-none resize-none focus:border-[#B08B57] focus:ring-1 focus:ring-[#B08B57] transition-all"
+                            rows={4}
+                            className="w-full rounded-2xl border border-[#E6DCCE] bg-[#FAF4EB] px-5 py-3.5 text-sm text-[#2E335B] placeholder:text-[#A89B8E] outline-none resize-none focus:border-[#5B4B8A] focus:ring-4 focus:ring-[#5B4B8A]/10 transition-all"
                         />
                     </div>
                     {/* Submit Button */}
                     <div className="pt-2 flex justify-center">
-                        <Button onClick={handleSubmit}>
-                            {loading ? "Sending..." : "Send Your Wishes"}
-                        </Button>
+                        <button
+                            type="button"
+                            disabled={!name || !message || loading}
+                            onClick={handleSubmit}
+                            className="w-full flex h-12 items-center justify-center rounded-2xl bg-[#5B4B8A] text-sm font-semibold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#4B3D74] disabled:opacity-45 disabled:cursor-not-allowed"
+                        >
+                            {loading ? "Mengirim doa..." : "Kirim Doa Restu"}
+                        </button>
                     </div>
                 </div>
             </div>
 
-            {/* List Wishes - Kontainer Utama */}
-            <div className="w-full max-w-lg flex flex-col gap-2">
-                {Array.isArray(wishes) && wishes.map((wish, index) => (
-                    <div
-                        key={wish.id ?? index}
-                        className="group w-full bg-white/70 backdrop-blur-sm p-6 md:p-8 rounded-[2rem] shadow-sm border border-white transition-all hover:bg-white hover:shadow-md"
-                    >
-                        <div className="flex items-center gap-4 mb-5">
-                            <div className="w-12 h-12 shrink-0 rounded-full bg-[#B08B57]/10 flex items-center justify-center text-[#B08B57] font-serif font-bold italic border border-[#B08B57]/5 uppercase">
-                                {(wish.name || wish.guestName || "G").charAt(0)}
+            {/* List Wishes */}
+            <div className="w-full max-w-lg flex flex-col gap-3">
+                {Array.isArray(wishes) && wishes.length > 0 ? (
+                    wishes.map((wish, index) => (
+                        <div
+                            key={wish.id ?? index}
+                            className="group w-full bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-sm border border-[#E6DCCE] text-left transition-all hover:shadow-md"
+                        >
+                            <div className="flex items-center gap-3.5 mb-3">
+                                <div className="size-10 shrink-0 rounded-full bg-[#5B4B8A]/10 flex items-center justify-center text-[#5B4B8A] font-serif font-bold italic border border-[#5B4B8A]/20 uppercase">
+                                    {(wish.name || wish.guestName || "T").charAt(0)}
+                                </div>
+
+                                <div className="flex flex-col">
+                                    <p className="text-base font-serif font-bold text-[#2E335B] leading-tight">
+                                        {wish.name || wish.guestName}
+                                    </p>
+                                    <p className="text-[10px] text-[#A67C52] uppercase tracking-[0.2em] mt-0.5">
+                                        Tamu Undangan
+                                    </p>
+                                </div>
                             </div>
 
-                            <div className="flex flex-col text-left">
-                                <p className="text-lg md:text-lg font-serif font-bold text-[#3B2F2F] leading-tight">
-                                    {wish.name || wish.guestName}
-                                </p>
-
-                                <p className="text-[10px] md:text-xs text-[#B8ACA1] uppercase tracking-[0.2em] mt-1">
-                                    Wedding Guest
+                            <div className="relative pl-3 border-l-2 border-[#5B4B8A]/30">
+                                <p className="text-sm text-[#463853] leading-relaxed italic">
+                                    &ldquo;{wish.message}&rdquo;
                                 </p>
                             </div>
                         </div>
-
-                        <div className="relative pl-2 border-l-2 border-[#B08B57]/10 text-left">
-                            <p className="text-sm md:text-base text-[#6B5B5B] leading-relaxed italic">
-                                “{wish.message}”
-                            </p>
-                        </div>
-                    </div>
-                ))}
+                    ))
+                ) : (
+                    <p className="text-sm text-[#726558] italic py-4">
+                        Belum ada ucapan. Jadilah yang pertama mengirimkan doa restu!
+                    </p>
+                )}
             </div>
         </section>
     );

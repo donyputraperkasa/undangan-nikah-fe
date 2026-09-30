@@ -67,11 +67,15 @@ export default function MusicButton() {
                     items-center
                     justify-center
                     rounded-full
-                    bg-[#273d35]
+                    bg-[#5B4B8A]
                     text-white
+                    border-2
+                    border-white
                     shadow-xl
+                    shadow-[#5B4B8A]/30
                     transition-all
                     hover:scale-105
+                    hover:bg-[#4B3D74]
                 "
             >
                 {isPlaying ? (

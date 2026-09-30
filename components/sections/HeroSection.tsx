@@ -1,7 +1,8 @@
 "use client";
 
 import { CalendarDays, ChevronDown, MailOpen } from "lucide-react";
-import Image from "next/image";
+import GununganOrnament from "../ornaments/GununganOrnament";
+import FloralWreath from "../ornaments/FloralWreath";
 
 type HeroSectionProps = {
     guestName?: string;
@@ -10,63 +11,79 @@ type HeroSectionProps = {
 export default function HeroSection({ guestName = "Tamu Undangan" }: HeroSectionProps) {
     const handleOpenInvitation = () => {
         window.dispatchEvent(new Event("play-music"));
-        document.getElementById("couple-section")?.scrollIntoView({ behavior: "smooth" });
+        document.getElementById("quote-section")?.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
-        <section className="relative min-h-[100svh] w-full overflow-hidden bg-[#20342d] text-white">
-            <Image
-                src="/images/naruto-hinata-prewed.png"
-                alt=""
-                fill
-                sizes="100vw"
-                className="scale-110 object-cover object-center opacity-45 blur-2xl"
-            />
-            <div className="absolute inset-y-0 left-1/2 w-full max-w-[52rem] -translate-x-1/2">
-                <Image
-                    src="/images/naruto-hinata-prewed.png"
-                    alt="Ilustrasi prewedding Nugroho dan Agata"
-                    fill
-                    preload
-                    sizes="(max-width: 832px) 100vw, 832px"
-                    className="object-contain object-center"
-                />
+        <section className="relative min-h-[100svh] w-full overflow-hidden bg-[#FAF7F2] text-[#2D2638] flex flex-col justify-between items-center px-4 py-8 sm:py-12 md:px-8">
+            {/* Left and Right Wayang Gunungan Silhouettes */}
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 sm:-translate-x-4 md:translate-x-0 h-[70vh] sm:h-[80vh] max-h-[720px] pointer-events-none z-0 opacity-80 sm:opacity-90">
+                <GununganOrnament variant="side-left" color="#9E7B4F" className="h-full w-auto" />
             </div>
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(16,29,24,.28)_0%,rgba(16,29,24,.42)_42%,rgba(16,29,24,.94)_100%)]" />
-            <div className="absolute inset-x-4 top-4 bottom-4 rounded-[2rem] border border-white/20 md:inset-x-7 md:top-7 md:bottom-7" />
 
-            <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col items-center justify-between px-7 py-12 text-center md:py-16">
-                <div className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.36em] text-[#f3dfae] md:text-xs">
-                    <span className="h-px w-8 bg-[#f3dfae]/70" />
-                    The wedding of
-                    <span className="h-px w-8 bg-[#f3dfae]/70" />
-                </div>
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 sm:translate-x-4 md:translate-x-0 h-[70vh] sm:h-[80vh] max-h-[720px] pointer-events-none z-0 opacity-80 sm:opacity-90">
+                <GununganOrnament variant="side-right" color="#9E7B4F" className="h-full w-auto" />
+            </div>
 
-                <div className="mt-auto w-full max-w-3xl pb-8 pt-20 md:pb-12">
-                    <p className="mb-4 text-sm uppercase tracking-[0.24em] text-white/75">Jumat, 27 November 2026</p>
-                    <h1 className="font-serif text-[clamp(4.5rem,15vw,9.5rem)] font-medium leading-[0.65] tracking-[-0.055em]">
-                        Nugroho
-                        <span className="my-5 block text-[0.38em] italic leading-none text-[#e6c98b]">&</span>
-                        Agata
-                    </h1>
-                </div>
+            {/* Subtle background ambient glow */}
+            <div className="absolute top-10 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-[#5B4B8A]/5 blur-3xl pointer-events-none" />
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-[#9E7B4F]/5 blur-3xl pointer-events-none" />
 
-                <div className="w-full max-w-md rounded-[1.75rem] border border-white/20 bg-[#10251e]/55 p-5 shadow-2xl backdrop-blur-md md:p-6">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#e6c98b]">Kepada Yth.</p>
-                    <p className="mt-2 font-serif text-2xl font-semibold capitalize md:text-3xl">{guestName}</p>
-                    <p className="mt-2 text-xs leading-5 text-white/65">Mohon maaf apabila terdapat kesalahan penulisan nama atau gelar.</p>
+            {/* Top Text: Undangan Pernikahan */}
+            <header className="relative z-10 pt-2 sm:pt-4 text-center">
+                <p className="font-serif italic text-xl sm:text-2xl md:text-3xl text-[#2E335B] tracking-wide">
+                    Undangan Pernikahan
+                </p>
+            </header>
+
+            {/* Center Section: Floral Wreath with Names inside */}
+            <div className="relative z-10 my-auto py-2 sm:py-4 flex flex-col items-center justify-center w-full">
+                <FloralWreath className="w-[300px] sm:w-[380px] md:w-[440px] aspect-square">
+                    <div className="flex flex-col items-center justify-center text-center">
+                        <span className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#2E335B]">
+                            Nugroho
+                        </span>
+                        <span className="font-script text-3xl sm:text-4xl md:text-5xl text-[#9E7B4F] my-1 sm:my-2">
+                            &
+                        </span>
+                        <span className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#2E335B]">
+                            Agata
+                        </span>
+                    </div>
+                </FloralWreath>
+            </div>
+
+            {/* Bottom Section: Recipient Card & Open Button */}
+            <div className="relative z-10 w-full max-w-md pb-2 sm:pb-4 text-center flex flex-col items-center">
+                <p className="font-serif italic text-sm sm:text-base text-[#2E335B] mb-3">
+                    Turut Mengundang Bapak/Ibu/Saudara/i
+                </p>
+
+                {/* Card matching the rounded rectangle with purple border on printed cover */}
+                <div className="w-full rounded-[1.75rem] border-2 border-[#5B4B8A] bg-[#FAF4EC] px-6 py-5 shadow-lg shadow-[#5B4B8A]/10">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#9E7B4F]">
+                        Kepada Yth.
+                    </p>
+                    <p className="mt-1.5 font-serif text-xl sm:text-2xl font-semibold text-[#2E335B] capitalize">
+                        {guestName}
+                    </p>
 
                     <button
                         type="button"
                         onClick={handleOpenInvitation}
-                        className="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-[#d9b56f] text-sm font-bold text-[#20342d] shadow-lg transition hover:-translate-y-0.5 hover:bg-[#efd49a]"
+                        className="mt-4 flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-[#5B4B8A] text-sm font-semibold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#493974] hover:shadow-lg active:translate-y-0"
                     >
-                        <MailOpen size={17} /> Buka Undangan
+                        <MailOpen size={16} /> Buka Undangan
                     </button>
                 </div>
 
-                <div className="mt-8 flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-white/55">
-                    <CalendarDays size={14} /> Save our date <ChevronDown className="animate-bounce" size={15} />
+                {/* Footer disclaimer from printed cover */}
+                <p className="mt-3 text-[11px] sm:text-xs font-serif italic text-[#726558]">
+                    *Mohon maaf apabila ada penulisan nama &amp; tempat yang salah
+                </p>
+
+                <div className="mt-4 flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-[#9E7B4F]/80">
+                    <CalendarDays size={13} /> 27.11.2026 <ChevronDown className="animate-bounce" size={14} />
                 </div>
             </div>
         </section>

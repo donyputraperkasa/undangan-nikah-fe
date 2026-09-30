@@ -59,59 +59,59 @@ export default function GuestInvitationGenerator() {
 
     return (
         <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-            <section className="rounded-[2rem] border border-[#d7c6aa]/60 bg-white/85 p-6 shadow-[0_24px_70px_rgba(58,44,34,0.10)] backdrop-blur md:p-10">
+            <section className="rounded-[2rem] border border-[#E6DCCE] bg-white/90 p-6 shadow-xl shadow-[#A67C52]/5 backdrop-blur md:p-10">
                 <div className="mb-8 flex items-center gap-4">
-                    <div className="flex size-12 items-center justify-center rounded-2xl bg-[#273d35] text-[#f6e6bd]">
+                    <div className="flex size-12 items-center justify-center rounded-2xl bg-[#5B4B8A] text-white">
                         <Smartphone size={21} />
                     </div>
                     <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#ad7f45]">Data penerima</p>
-                        <h2 className="font-serif text-3xl text-[#273d35]">Siapa yang diundang?</h2>
+                        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#A67C52]">Data penerima</p>
+                        <h2 className="font-serif text-3xl text-[#2E335B]">Siapa yang diundang?</h2>
                     </div>
                 </div>
 
                 <div className="space-y-5">
                     <label className="block">
-                        <span className="mb-2 block text-sm font-semibold text-[#493d32]">Slug undangan</span>
+                        <span className="mb-2 block text-sm font-semibold text-[#2E335B]">Slug undangan</span>
                         <input
                             value={slug}
                             onChange={(event) => setSlug(cleanSlug(event.target.value))}
                             placeholder="nugroho-agata"
-                            className="h-14 w-full rounded-2xl border border-[#ded2c0] bg-[#fbf8f2] px-5 text-[#273d35] outline-none transition focus:border-[#ad7f45] focus:ring-4 focus:ring-[#ad7f45]/10"
+                            className="h-14 w-full rounded-2xl border border-[#E6DCCE] bg-[#FAF4EB] px-5 text-[#2E335B] outline-none transition focus:border-[#5B4B8A] focus:ring-4 focus:ring-[#5B4B8A]/10"
                         />
-                        <span className="mt-2 block text-xs leading-relaxed text-[#837568]">Sama dengan alamat undangan setelah nama domain.</span>
+                        <span className="mt-2 block text-xs leading-relaxed text-[#726558]">Sama dengan alamat undangan setelah nama domain.</span>
                     </label>
 
                     <label className="block">
-                        <span className="mb-2 block text-sm font-semibold text-[#493d32]">Nama tamu</span>
+                        <span className="mb-2 block text-sm font-semibold text-[#2E335B]">Nama tamu</span>
                         <input
                             value={guestName}
                             onChange={(event) => setGuestName(event.target.value)}
                             placeholder="Contoh: Bapak Budi & Keluarga"
-                            className="h-14 w-full rounded-2xl border border-[#ded2c0] bg-[#fbf8f2] px-5 text-[#273d35] outline-none transition focus:border-[#ad7f45] focus:ring-4 focus:ring-[#ad7f45]/10"
+                            className="h-14 w-full rounded-2xl border border-[#E6DCCE] bg-[#FAF4EB] px-5 text-[#2E335B] outline-none transition focus:border-[#5B4B8A] focus:ring-4 focus:ring-[#5B4B8A]/10"
                         />
                     </label>
 
                     <label className="block">
-                        <span className="mb-2 block text-sm font-semibold text-[#493d32]">Nomor WhatsApp</span>
+                        <span className="mb-2 block text-sm font-semibold text-[#2E335B]">Nomor WhatsApp</span>
                         <input
                             inputMode="tel"
                             value={phone}
                             onChange={(event) => setPhone(event.target.value)}
                             placeholder="Contoh: 0812 3456 7890"
-                            className="h-14 w-full rounded-2xl border border-[#ded2c0] bg-[#fbf8f2] px-5 text-[#273d35] outline-none transition focus:border-[#ad7f45] focus:ring-4 focus:ring-[#ad7f45]/10"
+                            className="h-14 w-full rounded-2xl border border-[#E6DCCE] bg-[#FAF4EB] px-5 text-[#2E335B] outline-none transition focus:border-[#5B4B8A] focus:ring-4 focus:ring-[#5B4B8A]/10"
                         />
-                        <span className="mt-2 block text-xs leading-relaxed text-[#837568]">Nomor 08 otomatis diubah menjadi format Indonesia 62.</span>
+                        <span className="mt-2 block text-xs leading-relaxed text-[#726558]">Nomor 08 otomatis diubah menjadi format Indonesia 62.</span>
                     </label>
                 </div>
             </section>
 
-            <section className="relative overflow-hidden rounded-[2rem] bg-[#273d35] p-6 text-white shadow-[0_24px_70px_rgba(39,61,53,0.22)] md:p-10">
+            <section className="relative overflow-hidden rounded-[2rem] bg-[#2E2836] p-6 text-white shadow-xl shadow-[#2E2836]/20 md:p-10">
                 <div className="absolute -right-16 -top-16 size-52 rounded-full border border-white/10" />
-                <div className="absolute -right-5 -top-5 size-32 rounded-full border border-[#e6c98b]/25" />
+                <div className="absolute -right-5 -top-5 size-32 rounded-full border border-[#D4AF37]/25" />
 
                 <div className="relative">
-                    <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#e6c98b]">Siap dibagikan</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#D8BE82]">Siap dibagikan</p>
                     <h2 className="mt-2 font-serif text-3xl">Tautan personal tamu</h2>
 
                     <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.07] p-4">
@@ -151,7 +151,7 @@ export default function GuestInvitationGenerator() {
                             type="button"
                             disabled={!message}
                             onClick={() => copy(message, "message")}
-                            className="mt-4 flex items-center gap-2 text-sm font-semibold text-[#e6c98b] transition hover:text-white disabled:opacity-40"
+                            className="mt-4 flex items-center gap-2 text-sm font-semibold text-[#D8BE82] transition hover:text-white disabled:opacity-40"
                         >
                             {copied === "message" ? <Check size={16} /> : <Copy size={16} />}
                             {copied === "message" ? "Pesan tersalin" : "Salin pesan"}
@@ -163,7 +163,7 @@ export default function GuestInvitationGenerator() {
                         target="_blank"
                         rel="noreferrer"
                         aria-disabled={!whatsappUrl}
-                        className={`mt-5 flex h-14 w-full items-center justify-center gap-3 rounded-2xl bg-[#d9b56f] font-bold text-[#20342d] shadow-lg transition hover:-translate-y-0.5 hover:bg-[#e6c98b] ${!whatsappUrl ? "pointer-events-none opacity-45" : ""}`}
+                        className={`mt-5 flex h-14 w-full items-center justify-center gap-3 rounded-2xl bg-[#5B4B8A] font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#4B3D74] ${!whatsappUrl ? "pointer-events-none opacity-45" : ""}`}
                     >
                         <MessageCircle size={20} /> Kirim lewat WhatsApp
                     </a>

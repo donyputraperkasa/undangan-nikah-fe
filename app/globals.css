@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f2e9;
-  --foreground: #273d35;
+  --background: #faf7f2;
+  --foreground: #2d2638;
 }
 
 @theme inline {
@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-manrope);
   --font-serif: var(--font-cormorant);
+  --font-script: var(--font-script);
 }
 
 html {
@@ -19,7 +20,8 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-manrope), Arial, sans-serif;
+  font-family: var(--font-sans), Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 button,
@@ -31,6 +33,6 @@ textarea {
 }
 
 ::selection {
-  background: #d9b56f;
-  color: #20342d;
+  background: #a67c52;
+  color: #ffffff;
 }

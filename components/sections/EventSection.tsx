@@ -1,106 +1,124 @@
-import { Heart, Sparkles } from "lucide-react";
+import { Clock, MapPin, ExternalLink } from "lucide-react";
+import VintageCorner from "../ornaments/VintageCorner";
 
 export default function EventSection() {
     return (
-        <section className="relative w-full overflow-hidden bg-white px-6 py-28 md:py-40 flex flex-col items-center text-center">
-            {/* Background Ornament */}
-            <div className="absolute top-0 left-0 w-72 h-72 bg-[#F8F5F2] rounded-full blur-[120px] opacity-70 pointer-events-none" />
-            <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#F3E8DC] rounded-full blur-[120px] opacity-70 pointer-events-none" />
-
-            {/* Floating Ornament */}
-            <Sparkles className="absolute top-24 left-10 w-6 h-6 text-[#D6B88D]/40 animate-pulse hidden md:block" />
-            <Heart className="absolute bottom-32 right-10 w-5 h-5 text-[#D6B88D]/40 animate-pulse hidden md:block" />
+        <section id="event-section" className="relative w-full overflow-hidden bg-[#FAF7F2] px-6 py-20 md:py-32 flex flex-col items-center text-center">
+            {/* Ambient Background Ornament */}
+            <div className="absolute top-10 left-10 w-72 h-72 bg-[#5B4B8A]/5 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute bottom-10 right-10 w-72 h-72 bg-[#A67C52]/5 rounded-full blur-[100px] pointer-events-none" />
 
             {/* Header */}
-            <div className="relative z-10 mb-20 animate-[fadeUp_1s_ease-out]">
-                <p className="text-xs md:text-sm tracking-[0.5em] uppercase text-[#B08B57] mb-4">
-                    Wedding Event
+            <div className="relative z-10 mb-14 max-w-2xl">
+                <p className="text-xs md:text-sm tracking-[0.4em] uppercase text-[#A67C52] font-semibold mb-3">
+                    Rangkaian Acara
                 </p>
 
-                <h2 className="text-4xl md:text-6xl font-serif text-[#3B2F2F] leading-tight mb-6">
-                    Celebrate With Us
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#2E335B] leading-tight mb-4">
+                    Hari Bahagia Kami
                 </h2>
 
-                <p className="max-w-2xl text-[#6B5B5B] leading-relaxed text-base md:text-lg px-4">
-                    We warmly invite you to join us in celebrating one of the
-                    most beautiful moments of our lives.
+                <p className="text-[#6B5E78] leading-relaxed text-sm md:text-base max-w-lg mx-auto">
+                    Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada:
                 </p>
             </div>
 
-            {/* Event Cards */}
-            <div className="relative z-10 w-full max-w-5xl grid md:grid-cols-2 gap-8 md:gap-10">
-                {/* Wedding Mass */}
-                <div className="relative overflow-hidden rounded-[2.5rem] bg-[#F8F5F2] p-10 md:p-14 shadow-2xl shadow-[#3B2F2F]/5 border border-white transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl animate-[fadeUp_1s_ease-out]">
-                    {/* Decorative Border */}
-                    <div className="absolute inset-3 border border-[#B08B57]/10 rounded-[2rem] pointer-events-none" />
+            {/* Event Cards (2 Columns matching printed invitation: AKAD & RESEPSI) */}
+            <div className="relative z-10 w-full max-w-4xl grid md:grid-cols-2 gap-8 md:gap-8">
+                {/* AKAD / PEMBERKATAN */}
+                <div className="relative overflow-hidden rounded-[2rem] bg-white/90 p-8 sm:p-10 shadow-xl shadow-[#A67C52]/5 border border-[#E6DCCE] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-center flex flex-col justify-between">
+                    <VintageCorner position="top-left" color="#A67C52" className="m-2" />
+                    <VintageCorner position="bottom-right" color="#A67C52" className="m-2" />
 
-                    {/* Ornament */}
-                    <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#EADBC8]/40 blur-3xl" />
+                    <div>
+                        <span className="inline-block rounded-full bg-[#FAF4EB] border border-[#E6DCCE] px-4 py-1 text-[11px] font-bold tracking-[0.25em] text-[#A67C52] uppercase mb-4">
+                            Pemberkatan
+                        </span>
 
-                    <p className="relative z-10 text-xs tracking-[0.4em] uppercase text-[#B08B57] mb-4">
-                        Holy Matrimony
-                    </p>
+                        <h3 className="text-2xl sm:text-3xl font-serif text-[#2E335B] font-semibold mb-6">
+                            AKAD
+                        </h3>
 
-                    <h3 className="relative z-10 text-3xl md:text-4xl font-serif text-[#3B2F2F] mb-8 leading-tight">
-                        Wedding Mass
-                    </h3>
+                        <div className="space-y-2 mb-6 text-[#463853]">
+                            <p className="text-base sm:text-lg font-medium">
+                                Jumat, 27 November 2026
+                            </p>
 
-                    <div className="space-y-3 mb-10 text-[#6B5B5B]">
-                        <p className="text-lg md:text-xl font-medium">
-                            Friday, 27 November 2026
-                        </p>
+                            <div className="flex items-center justify-center gap-2 text-sm font-semibold text-[#5B4B8A]">
+                                <Clock size={16} />
+                                <span>Pukul 10.00 WIB</span>
+                            </div>
+                        </div>
 
-                        <p className="text-sm tracking-[0.3em] uppercase">
-                            09.00 AM WIB
-                        </p>
+                        <div className="h-px w-16 bg-[#A67C52]/30 mx-auto mb-6" />
+
+                        <div className="space-y-1.5 mb-8">
+                            <p className="text-lg font-serif font-semibold text-[#2E335B] flex items-center justify-center gap-2">
+                                <MapPin size={18} className="text-[#A67C52] shrink-0" />
+                                Gereja St. Paulus Nganjuk
+                            </p>
+                            <p className="text-xs sm:text-sm text-[#726558]">
+                                Kabupaten Nganjuk, Jawa Timur
+                            </p>
+                        </div>
                     </div>
 
-                    <div className="h-[1px] w-16 bg-[#B08B57]/30 mb-8" />
-
-                    <p className="text-[#3B2F2F] text-lg font-medium leading-relaxed">
-                        Catholic Church of Kediri
-                    </p>
-
-                    <p className="text-[#6B5B5B] mt-2 leading-relaxed">
-                        Kediri, East Java
-                    </p>
+                    <a
+                        href="https://maps.google.com/?q=Gereja+Katolik+St.+Paulus+Nganjuk"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#FAF4EC] border border-[#E6DCCE] px-5 py-2.5 text-xs font-semibold text-[#2E335B] transition-all hover:bg-[#5B4B8A] hover:text-white"
+                    >
+                        <ExternalLink size={14} /> Petunjuk Arah
+                    </a>
                 </div>
 
-                {/* Reception */}
-                <div className="relative overflow-hidden rounded-[2.5rem] bg-[#F8F5F2] p-10 md:p-14 shadow-2xl shadow-[#3B2F2F]/5 border border-white transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl animate-[fadeUp_1.3s_ease-out]">
-                    {/* Decorative Border */}
-                    <div className="absolute inset-3 border border-[#B08B57]/10 rounded-[2rem] pointer-events-none" />
+                {/* RESEPSI */}
+                <div className="relative overflow-hidden rounded-[2rem] bg-white/90 p-8 sm:p-10 shadow-xl shadow-[#A67C52]/5 border border-[#E6DCCE] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-center flex flex-col justify-between">
+                    <VintageCorner position="top-right" color="#A67C52" className="m-2" />
+                    <VintageCorner position="bottom-left" color="#A67C52" className="m-2" />
 
-                    {/* Ornament */}
-                    <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-[#EADBC8]/40 blur-3xl" />
+                    <div>
+                        <span className="inline-block rounded-full bg-[#FAF4EB] border border-[#E6DCCE] px-4 py-1 text-[11px] font-bold tracking-[0.25em] text-[#A67C52] uppercase mb-4">
+                            Perayaan
+                        </span>
 
-                    <p className="relative z-10 text-xs tracking-[0.4em] uppercase text-[#B08B57] mb-4">
-                        Wedding Reception
-                    </p>
+                        <h3 className="text-2xl sm:text-3xl font-serif text-[#2E335B] font-semibold mb-6">
+                            RESEPSI
+                        </h3>
 
-                    <h3 className="relative z-10 text-3xl md:text-4xl font-serif text-[#3B2F2F] mb-8 leading-tight">
-                        Reception Party
-                    </h3>
+                        <div className="space-y-2 mb-6 text-[#463853]">
+                            <p className="text-base sm:text-lg font-medium">
+                                Jumat, 27 November 2026
+                            </p>
 
-                    <div className="space-y-3 mb-10 text-[#6B5B5B]">
-                        <p className="text-lg md:text-xl font-medium">
-                            Friday, 27 November 2026
-                        </p>
+                            <div className="flex items-center justify-center gap-2 text-sm font-semibold text-[#5B4B8A]">
+                                <Clock size={16} />
+                                <span>17.00 – 18.30 WIB</span>
+                            </div>
+                        </div>
 
-                        <p className="text-sm tracking-[0.3em] uppercase">
-                            01.00 PM WIB
-                        </p>
+                        <div className="h-px w-16 bg-[#A67C52]/30 mx-auto mb-6" />
+
+                        <div className="space-y-1.5 mb-8">
+                            <p className="text-lg font-serif font-semibold text-[#2E335B] flex items-center justify-center gap-2">
+                                <MapPin size={18} className="text-[#A67C52] shrink-0" />
+                                Balai Desa Kelurahan Semampir
+                            </p>
+                            <p className="text-xs sm:text-sm text-[#726558]">
+                                Kota Kediri, Jawa Timur
+                            </p>
+                        </div>
                     </div>
 
-                    <div className="h-[1px] w-16 bg-[#B08B57]/30 mb-8" />
-
-                    <p className="text-[#3B2F2F] text-lg font-medium leading-relaxed">
-                        Semampir Village Hall
-                    </p>
-
-                    <p className="text-[#6B5B5B] mt-2 leading-relaxed">
-                        Kediri City, East Java
-                    </p>
+                    <a
+                        href="https://maps.app.goo.gl/DT4vURy9rh9EGDi7A"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#FAF4EC] border border-[#E6DCCE] px-5 py-2.5 text-xs font-semibold text-[#2E335B] transition-all hover:bg-[#5B4B8A] hover:text-white"
+                    >
+                        <ExternalLink size={14} /> Petunjuk Arah
+                    </a>
                 </div>
             </div>
         </section>

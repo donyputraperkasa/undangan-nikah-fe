@@ -10,7 +10,8 @@ type TimeLeft = {
     seconds: number;
 };
 
-const WEDDING_DATE = new Date("2026-11-27T08:00:00+07:00").getTime();
+// 27 November 2026, 10.00 WIB (UTC+7)
+const WEDDING_DATE = new Date("2026-11-27T10:00:00+07:00").getTime();
 const EMPTY_TIME: TimeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
 
 function calculateTimeLeft(): TimeLeft {
@@ -30,6 +31,7 @@ export default function Countdown() {
     const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
 
     useEffect(() => {
+        setTimeLeft(calculateTimeLeft());
         const timer = window.setInterval(() => {
             setTimeLeft(calculateTimeLeft());
         }, 1000);
@@ -46,16 +48,16 @@ export default function Countdown() {
 
     return (
         <section className="flex w-full flex-col items-center justify-center">
-            <div className="mx-auto grid w-full max-w-2xl grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
+            <div className="mx-auto grid w-full max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 md:gap-5">
                 {items.map((item) => (
                     <Card
                         key={item.label}
-                        className="rounded-[1.5rem] border border-white bg-white py-7 text-center shadow-xl shadow-[#3B2F2F]/5 transition duration-500 hover:-translate-y-1 hover:shadow-2xl md:py-10"
+                        className="rounded-2xl border border-[#E6DCCE] bg-white/90 py-6 sm:py-8 text-center shadow-lg shadow-[#A67C52]/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                     >
-                        <h3 className="font-serif text-4xl font-semibold text-[#273d35] md:text-5xl">
+                        <h3 className="font-serif text-4xl sm:text-5xl font-semibold text-[#2E335B]">
                             {String(item.value).padStart(2, "0")}
                         </h3>
-                        <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.2em] text-[#A67C52] md:text-[11px]">
+                        <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.22em] text-[#A67C52]">
                             {item.label}
                         </p>
                     </Card>
