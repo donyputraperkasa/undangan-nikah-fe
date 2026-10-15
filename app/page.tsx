@@ -28,14 +28,14 @@ export default function Home() {
             {/* Inside Center Panel: Date 27.11.2026 & Countdown */}
             <CountdownSection />
 
-            {/* Inside Center Panel: AKAD & RESEPSI Event Details */}
+            {/* Inside Center Panel: Pemberkatan & RESEPSI Event Details */}
             <EventSection />
 
             {/* Inside Right Panel: Location Details, SCAN LOKASI QR Code & Google Maps */}
             <MapSection />
 
             {/* Wedding Gift */}
-            <GiftSection />
+            {/* <GiftSection /> */}
 
             {/* RSVP */}
             <RSVPSection />

@@ -35,10 +35,6 @@ export default function EventSection() {
                             Pemberkatan
                         </span>
 
-                        <h3 className="text-2xl sm:text-3xl font-serif text-[#2E335B] font-semibold mb-6">
-                            AKAD
-                        </h3>
-
                         <div className="space-y-2 mb-6 text-[#463853]">
                             <p className="text-base sm:text-lg font-medium">
                                 Jumat, 27 November 2026
@@ -80,21 +76,23 @@ export default function EventSection() {
 
                     <div>
                         <span className="inline-block rounded-full bg-[#FAF4EB] border border-[#E6DCCE] px-4 py-1 text-[11px] font-bold tracking-[0.25em] text-[#A67C52] uppercase mb-4">
-                            Perayaan
+                            Resepsi
                         </span>
-
-                        <h3 className="text-2xl sm:text-3xl font-serif text-[#2E335B] font-semibold mb-6">
-                            RESEPSI
-                        </h3>
 
                         <div className="space-y-2 mb-6 text-[#463853]">
                             <p className="text-base sm:text-lg font-medium">
                                 Jumat, 27 November 2026
                             </p>
 
-                            <div className="flex items-center justify-center gap-2 text-sm font-semibold text-[#5B4B8A]">
-                                <Clock size={16} />
-                                <span>17.00 – 18.30 WIB</span>
+                            <div className="flex flex-col items-center justify-center gap-1.5 text-sm font-semibold text-[#5B4B8A]">
+                                <div className="flex items-center justify-center gap-2">
+                                    <Clock size={15} />
+                                    <span>Sesi 1 : 17.00 – 19.00 WIB</span>
+                                </div>
+                                <div className="flex items-center justify-center gap-2">
+                                    <Clock size={15} />
+                                    <span>Sesi 2 : 19.00 – 21.00 WIB</span>
+                                </div>
                             </div>
                         </div>
 

@@ -28,7 +28,7 @@ export type InvitationType = {
     quote: string;
     bibleVerse: string;
     weddingDate: string;
-    akad: EventType;
+    pemberkatan: EventType;
     reception: EventType;
     gallery: GalleryType[];
     music: string;

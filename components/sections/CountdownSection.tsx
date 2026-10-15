@@ -2,7 +2,7 @@ import Countdown from "../shared/Countdown";
 import { Calendar } from "lucide-react";
 
 export default function CountdownSection() {
-    const calendarUrl = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Nugroho+%26+Agata&dates=20261127T030000Z/20261127T113000Z&details=Pernikahan+Nugroho+%26+Agata.%0AAkad%3A+10.00+WIB+di+Gereja+St.+Paulus+Nganjuk%0AResepsi%3A+17.00+-+18.30+WIB+di+Balai+Desa+Kelurahan+Semampir&location=Balai+Desa+Kelurahan+Semampir";
+    const calendarUrl = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Nugroho+%26+Agata&dates=20261127T030000Z/20261127T140000Z&details=Pernikahan+Nugroho+%26+Agata.%0APemberkatan%3A+10.00+WIB+di+Gereja+St.+Paulus+Nganjuk%0AResepsi%3A+Sesi+1+(17.00+-+19.00+WIB)+%26+Sesi+2+(19.00+-+21.00+WIB)+di+Balai+Desa+Kelurahan+Semampir&location=Balai+Desa+Kelurahan+Semampir";
 
     return (
         <section className="w-full bg-[#FAF7F2] px-6 py-20 md:py-28 text-center border-t border-[#EFE8DD]">
