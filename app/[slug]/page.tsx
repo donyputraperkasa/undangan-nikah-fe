@@ -5,7 +5,7 @@ import CoupleSection from "@/components/sections/CoupleSection";
 import CountdownSection from "@/components/sections/CountdownSection";
 import EventSection from "@/components/sections/EventSection";
 import MapSection from "@/components/sections/MapSection";
-import GiftSection from "@/components/sections/GiftSection";
+// import GiftSection from "@/components/sections/GiftSection";
 import RSVPSection from "@/components/sections/RSVPSection";
 import WishSection from "@/components/sections/WishesSection";
 import ClosingSection from "@/components/sections/ClosingSection";
@@ -54,7 +54,7 @@ export default async function InvitationPage({
             <MapSection />
 
             {/* Wedding Gift */}
-            <GiftSection />
+            {/* <GiftSection /> */}
 
             {/* RSVP */}
             <RSVPSection guestName={guestName} />
