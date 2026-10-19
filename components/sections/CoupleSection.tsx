@@ -52,7 +52,7 @@ export default function CoupleSection() {
 
                         <div className="relative z-10 space-y-4 pt-2">
                             <p className="text-sm sm:text-base font-medium text-[#463853] leading-relaxed">
-                                Putri Pertama dari Bapak Sunardi &amp; Ibu Yustina Sri Prihatini
+                                Putri Pertama dari Bapak Yohanes Sunardi &amp; Ibu Yustina Sri Prihatini
                             </p>
 
                             <div>
