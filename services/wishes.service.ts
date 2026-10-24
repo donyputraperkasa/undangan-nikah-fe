@@ -1,11 +1,9 @@
 import api from "@/lib/axios";
+import type { CreateWishType } from "@/types/wishes.type";
 
-export type WishPayload = {
-    name: string;
-    message: string;
-};
+export type WishPayload = CreateWishType;
 
-export async function createWish(payload: WishPayload) {
+export async function createWish(payload: CreateWishType) {
     const response = await api.post(
         "/wishes",
         payload

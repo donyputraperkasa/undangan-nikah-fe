@@ -1,8 +1,9 @@
 export type WishType = {
-    id: string;
-    name: string;
+    id?: string;
+    name?: string;
+    guestName?: string;
     message: string;
-    createdAt: string;
+    createdAt?: string;
 };
 
 export type CreateWishType = {

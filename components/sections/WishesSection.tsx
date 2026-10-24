@@ -7,14 +7,7 @@ import {
     createWish,
     getWishes,
 } from "../../services/wishes.service";
-
-type Wish = {
-    id?: string;
-    name?: string;
-    guestName?: string;
-    message: string;
-    createdAt?: string;
-};
+import type { WishType } from "@/types/wishes.type";
 
 type WishSectionProps = {
     guestName?: string;
@@ -25,7 +18,7 @@ export default function WishSection({ guestName = "" }: WishSectionProps) {
     const initialName = guestName === "Tamu Undangan" ? "" : guestName;
     const [name, setName] = useState(initialName);
     const [message, setMessage] = useState("");
-    const [wishes, setWishes] = useState<Wish[]>([]);
+    const [wishes, setWishes] = useState<WishType[]>([]);
     const [loading, setLoading] = useState(false);
 
     async function fetchWishes() {

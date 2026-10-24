@@ -1,13 +1,10 @@
 import api from "@/lib/axios";
+import type { CreateRSVPType } from "@/types/rsvp.type";
 
-export type RSVPPayload = {
-    name: string;
-    attendance: string;
-    totalGuest: number;
-};
+export type RSVPPayload = CreateRSVPType;
 
 export async function createRSVP(
-    payload: RSVPPayload
+    payload: CreateRSVPType
 ) {
     const response = await api.post(
         "/rsvp",

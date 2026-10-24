@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { MapPin, QrCode } from "lucide-react";
 import GununganOrnament from "../ornaments/GununganOrnament";
 import VintageCorner from "../ornaments/VintageCorner";
@@ -42,46 +43,14 @@ export default function MapSection() {
                             <div className="bg-[#FAF7F2] text-[#614B35] text-[11px] font-bold tracking-[0.2em] px-4 py-1 rounded-md uppercase mb-3">
                                 SCAN ME
                             </div>
-                            <div className="bg-white p-3 rounded-xl shadow-inner w-full flex items-center justify-center">
-                                {/* SVG QR Code representation */}
-                                <svg
-                                    viewBox="0 0 100 100"
-                                    className="w-full h-full max-w-[150px] aspect-square"
-                                    fill="#2E2836"
-                                >
-                                    {/* Corner squares (position markers) */}
-                                    <rect x="5" y="5" width="28" height="28" rx="4" fill="none" stroke="#2E2836" strokeWidth="6" />
-                                    <rect x="13" y="13" width="12" height="12" rx="2" />
-
-                                    <rect x="67" y="5" width="28" height="28" rx="4" fill="none" stroke="#2E2836" strokeWidth="6" />
-                                    <rect x="75" y="13" width="12" height="12" rx="2" />
-
-                                    <rect x="5" y="67" width="28" height="28" rx="4" fill="none" stroke="#2E2836" strokeWidth="6" />
-                                    <rect x="13" y="75" width="12" height="12" rx="2" />
-
-                                    {/* Data pattern modules */}
-                                    <rect x="42" y="10" width="7" height="7" />
-                                    <rect x="52" y="15" width="6" height="6" />
-                                    <rect x="42" y="25" width="6" height="8" />
-                                    <rect x="10" y="42" width="8" height="7" />
-                                    <rect x="24" y="45" width="7" height="6" />
-                                    <rect x="36" y="38" width="6" height="6" />
-                                    <rect x="48" y="42" width="8" height="8" />
-                                    <rect x="60" y="38" width="6" height="6" />
-                                    <rect x="72" y="45" width="8" height="6" />
-                                    <rect x="85" y="40" width="7" height="8" />
-                                    <rect x="40" y="56" width="8" height="8" />
-                                    <rect x="55" y="55" width="8" height="6" />
-                                    <rect x="68" y="60" width="6" height="8" />
-                                    <rect x="42" y="72" width="7" height="7" />
-                                    <rect x="54" y="70" width="8" height="8" />
-                                    <rect x="42" y="85" width="8" height="6" />
-                                    <rect x="55" y="82" width="6" height="8" />
-                                    <rect x="68" y="75" width="8" height="6" />
-                                    <rect x="80" y="68" width="8" height="8" />
-                                    <rect x="75" y="82" width="7" height="8" />
-                                    <rect x="86" y="85" width="6" height="6" />
-                                </svg>
+                            <div className="bg-white p-3 rounded-xl shadow-inner w-full flex items-center justify-center overflow-hidden">
+                                <Image
+                                    src="/images/scan-alamat.png"
+                                    alt="Scan Barcode Alamat"
+                                    width={200}
+                                    height={200}
+                                    className="w-full h-auto max-w-[170px] aspect-square object-contain"
+                                />
                             </div>
                         </div>
 

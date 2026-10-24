@@ -1,5 +1,5 @@
 import GuestInvitationGenerator from "@/components/tools/GuestInvitationGenerator";
-import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, CheckCircle2, MessageSquareText } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
@@ -15,9 +15,18 @@ export default function SendInvitationPage() {
     return (
         <main className="min-h-screen overflow-hidden bg-[#FAF7F2] text-[#2E335B]">
             <div className="mx-auto max-w-6xl px-5 py-8 md:px-8 md:py-12">
-                <Link href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-[#6B5E78] transition hover:text-[#5B4B8A]">
-                    <ArrowLeft size={17} /> Kembali ke undangan
-                </Link>
+                <div className="flex flex-wrap items-center justify-between gap-4">
+                    <Link href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-[#6B5E78] transition hover:text-[#5B4B8A]">
+                        <ArrowLeft size={17} /> Kembali ke undangan
+                    </Link>
+
+                    <Link
+                        href="/hay-apin-mochi/dashboard"
+                        className="inline-flex items-center gap-2 rounded-2xl bg-white px-4 py-2 text-sm font-semibold text-[#5B4B8A] border border-[#E6DCCE] shadow-sm transition hover:bg-[#FAF4EB]"
+                    >
+                        <MessageSquareText size={16} /> Lihat Rekap Ucapan &amp; RSVP
+                    </Link>
+                </div>
 
                 <header className="max-w-3xl py-14 md:py-20">
                     <p className="mb-4 text-xs font-bold uppercase tracking-[0.32em] text-[#A67C52]">Guest invitation tools</p>

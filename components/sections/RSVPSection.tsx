@@ -4,19 +4,18 @@ import { Check, UserRound, X } from "lucide-react";
 import { useState } from "react";
 
 import { createRSVP } from "@/services/rsvp.service";
+import type { AttendanceOption } from "@/types/rsvp.type";
 
 type RSVPSectionProps = {
     guestName?: string;
 };
-
-type Attendance = "" | "attending" | "not-attending";
 
 export default function RSVPSection({ guestName = "" }: RSVPSectionProps) {
     const personalizedName = guestName.trim() && guestName !== "Tamu Undangan"
         ? guestName.trim()
         : "";
     const [manualName, setManualName] = useState("");
-    const [attendance, setAttendance] = useState<Attendance>("");
+    const [attendance, setAttendance] = useState<AttendanceOption>("");
     const [loading, setLoading] = useState(false);
     const [submitted, setSubmitted] = useState(false);
 

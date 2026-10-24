@@ -1,9 +1,19 @@
+export type AttendanceOption = "" | "attending" | "not-attending";
+
+export type AttendanceStatus =
+    | "attending"
+    | "not-attending"
+    | "Hadir"
+    | "Tidak Hadir"
+    | "Masih Ragu"
+    | string;
+
 export type RSVPType = {
-    id: string;
+    id?: string;
     name: string;
-    attendance: "Hadir" | "Tidak Hadir" | "Masih Ragu";
-    totalGuest: number;
-    createdAt: string;
+    attendance: AttendanceStatus;
+    totalGuest?: number;
+    createdAt?: string;
 };
 
 export type CreateRSVPType = {
