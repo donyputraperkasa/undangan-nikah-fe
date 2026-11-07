@@ -122,7 +122,7 @@ export default function WishesAndRSVPDashboard() {
             if (rsvpFilter === "not-attending" && isAttending) return false;
 
             if (searchQuery.trim()) {
-                const name = (rsvp.name || "").toLowerCase();
+                const name = (rsvp.name || rsvp.guestName || "").toLowerCase();
                 return name.includes(searchQuery.toLowerCase());
             }
             return true;
@@ -373,11 +373,11 @@ export default function WishesAndRSVPDashboard() {
                                                 <tr key={rsvp.id ?? idx} className="hover:bg-[#FAF7F2]/60 transition">
                                                     <td className="py-4 px-6 font-medium">
                                                         <div className="flex items-center gap-3">
-                                                            <div className="size-8 rounded-full bg-[#FAF4EB] border border-[#E6DCCE] flex items-center justify-center font-serif text-xs font-bold text-[#A67C52]">
-                                                                {rsvp.name?.charAt(0) || "T"}
+                                                            <div className="size-8 rounded-full bg-[#FAF4EB] border border-[#E6DCCE] flex items-center justify-center font-serif text-xs font-bold text-[#A67C52] uppercase">
+                                                                {(rsvp.name || rsvp.guestName || "T").charAt(0)}
                                                             </div>
                                                             <span className="font-serif font-bold text-[#2E335B]">
-                                                                {rsvp.name}
+                                                                {rsvp.name || rsvp.guestName || "Tamu Undangan"}
                                                             </span>
                                                         </div>
                                                     </td>

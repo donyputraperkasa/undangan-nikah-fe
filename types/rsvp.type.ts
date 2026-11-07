@@ -10,7 +10,8 @@ export type AttendanceStatus =
 
 export type RSVPType = {
     id?: string;
-    name: string;
+    name?: string;
+    guestName?: string;
     attendance: AttendanceStatus;
     totalGuest?: number;
     createdAt?: string;
