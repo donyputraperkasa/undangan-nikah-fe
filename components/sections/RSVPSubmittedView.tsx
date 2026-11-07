@@ -27,3 +27,4 @@ export default function RSVPSubmittedView({ name, onReset }: RSVPSubmittedViewPr
         </div>
     );
 }
+
