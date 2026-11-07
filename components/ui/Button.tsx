@@ -1,14 +1,11 @@
 "use client";
 
-type Props = {
-    children: React.ReactNode;
-    onClick?: () => void;
-};
+import type { ButtonProps } from "@/types/ui.type";
 
 export default function Button({
     children,
     onClick,
-}: Props) {
+}: ButtonProps) {
     return (
         <button
             type="button"

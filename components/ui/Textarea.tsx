@@ -1,6 +1,4 @@
-import { TextareaHTMLAttributes } from "react";
-
-type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement>;
+import type { TextareaProps } from "@/types/ui.type";
 
 export default function Textarea(props: TextareaProps) {
     return (

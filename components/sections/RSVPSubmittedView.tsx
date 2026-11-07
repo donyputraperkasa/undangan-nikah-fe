@@ -1,9 +1,5 @@
 import { Check } from "lucide-react";
-
-type RSVPSubmittedViewProps = {
-    name: string;
-    onReset: () => void;
-};
+import type { RSVPSubmittedViewProps } from "@/types/rsvp.type";
 
 export default function RSVPSubmittedView({ name, onReset }: RSVPSubmittedViewProps) {
     return (

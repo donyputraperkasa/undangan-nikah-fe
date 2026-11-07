@@ -1,6 +1,4 @@
-type ButterflyProps = {
-    className?: string;
-};
+import type { ButterflyProps } from "@/types/ornament.type";
 
 export default function Butterfly({
     className = "",

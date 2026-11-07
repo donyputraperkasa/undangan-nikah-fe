@@ -34,3 +34,37 @@ export type InvitationType = {
     music: string;
     createdAt: string;
 };
+
+export interface InvitationPageProps {
+    params: Promise<{
+        slug: string;
+    }>;
+    searchParams: Promise<{
+        to?: string | string[];
+    }>;
+}
+
+export type HeroSectionProps = {
+    guestName?: string;
+};
+
+export type TimeLeft = {
+    days: number;
+    hours: number;
+    minutes: number;
+    seconds: number;
+};
+
+export type GoogleMapsButtonProps = {
+    link: string;
+};
+
+export type CopiedType = "link" | "message" | null;
+
+export type InvitationSharePreviewProps = {
+    invitationUrl: string;
+    message: string;
+    whatsappUrl: string;
+    copied: CopiedType;
+    onCopy: (value: string, type: "link" | "message") => void;
+};

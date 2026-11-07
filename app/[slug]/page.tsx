@@ -10,16 +10,7 @@ import RSVPSection from "@/components/sections/RSVPSection";
 import WishSection from "@/components/sections/WishesSection";
 import ClosingSection from "@/components/sections/ClosingSection";
 import CreateByMe from "@/components/sections/CreateByMe";
-
-interface InvitationPageProps {
-    params: Promise<{
-        slug: string;
-    }>;
-
-    searchParams: Promise<{
-        to?: string | string[];
-    }>;
-}
+import type { InvitationPageProps } from "@/types/invitation.type";
 
 export default async function InvitationPage({
     params,

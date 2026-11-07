@@ -10,3 +10,13 @@ export type CreateWishType = {
     name: string;
     message: string;
 };
+
+export type WishPayload = CreateWishType;
+
+export type WishSectionProps = {
+    guestName?: string;
+};
+
+export type WishCardListProps = {
+    wishes: WishType[];
+};

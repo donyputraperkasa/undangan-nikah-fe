@@ -1,8 +1,6 @@
 import api from "@/lib/axios";
 import type { CreateRSVPType } from "@/types/rsvp.type";
 
-export type RSVPPayload = CreateRSVPType;
-
 export async function createRSVP(
     payload: CreateRSVPType
 ) {

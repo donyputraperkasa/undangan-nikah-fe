@@ -1,13 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-
-type TimeLeft = {
-    days: number;
-    hours: number;
-    minutes: number;
-    seconds: number;
-};
+import type { TimeLeft } from "@/types/invitation.type";
 
 export default function useCountdown(targetDate: string) {
     const calculateTimeLeft = useCallback((): TimeLeft => {

@@ -1,6 +1,4 @@
-import { InputHTMLAttributes } from "react";
-
-type InputProps = InputHTMLAttributes<HTMLInputElement>;
+import type { InputProps } from "@/types/ui.type";
 
 export default function Input(props: InputProps) {
     return (

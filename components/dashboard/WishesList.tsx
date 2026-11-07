@@ -1,13 +1,5 @@
 import { Clock, Heart, RefreshCw } from "lucide-react";
-import type { WishType } from "@/types/wishes.type";
-
-type WishesListProps = {
-    loading: boolean;
-    totalCount: number;
-    wishes: WishType[];
-    searchQuery: string;
-    formatDate: (dateStr?: string) => string;
-};
+import type { WishesListProps } from "@/types/dashboard.type";
 
 export default function WishesList({
     loading,

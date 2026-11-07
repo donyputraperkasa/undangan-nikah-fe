@@ -1,8 +1,4 @@
-type SectionTitleProps = {
-    subtitle?: string;
-    title: string;
-    description?: string;
-};
+import type { SectionTitleProps } from "@/types/ui.type";
 
 export default function SectionTitle({
     subtitle,

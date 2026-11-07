@@ -1,9 +1,4 @@
-import { ReactNode } from "react";
-
-type FloralFrameProps = {
-    children: ReactNode;
-    className?: string;
-};
+import type { FloralFrameProps } from "@/types/ornament.type";
 
 export default function FloralFrame({
     children,

@@ -1,8 +1,4 @@
-interface FloatingGlowProps {
-    className?: string;
-    color?: string;
-    size?: string;
-}
+import type { FloatingGlowProps } from "@/types/ornament.type";
 
 export default function FloatingGlow({
     className = "",

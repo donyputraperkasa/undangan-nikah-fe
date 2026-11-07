@@ -1,9 +1,4 @@
-import { ReactNode } from "react";
-
-type ContainerProps = {
-    children: ReactNode;
-    className?: string;
-};
+import type { ContainerProps } from "@/types/ui.type";
 
 export default function Container({
     children,

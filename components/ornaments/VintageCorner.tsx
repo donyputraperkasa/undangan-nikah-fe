@@ -1,8 +1,4 @@
-type VintageCornerProps = {
-    position?: "top-left" | "top-right" | "bottom-left" | "bottom-right";
-    className?: string;
-    color?: string;
-};
+import type { VintageCornerProps } from "@/types/ornament.type";
 
 export default function VintageCorner({
     position = "top-left",

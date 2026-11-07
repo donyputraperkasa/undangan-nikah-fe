@@ -2,12 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { createWish, getWishes } from "../../services/wishes.service";
-import type { WishType } from "@/types/wishes.type";
+import type { WishSectionProps, WishType } from "@/types/wishes.type";
 import WishCardList from "./WishCardList";
-
-type WishSectionProps = {
-    guestName?: string;
-};
 
 export default function WishSection({ guestName = "" }: WishSectionProps) {
     const initialName = guestName === "Tamu Undangan" ? "" : guestName;

@@ -1,9 +1,4 @@
-import { ReactNode } from "react";
-
-interface ParallaxLayerProps {
-    children: ReactNode;
-    className?: string;
-}
+import type { ParallaxLayerProps } from "@/types/ornament.type";
 
 export default function ParallaxLayer({
     children,

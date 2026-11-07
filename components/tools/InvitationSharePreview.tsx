@@ -1,12 +1,5 @@
 import { Check, Copy, ExternalLink, Link2, MessageCircle } from "lucide-react";
-
-type InvitationSharePreviewProps = {
-    invitationUrl: string;
-    message: string;
-    whatsappUrl: string;
-    copied: "link" | "message" | null;
-    onCopy: (value: string, type: "link" | "message") => void;
-};
+import type { InvitationSharePreviewProps } from "@/types/invitation.type";
 
 export default function InvitationSharePreview({
     invitationUrl,

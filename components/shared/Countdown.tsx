@@ -2,13 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Card from "../ui/Card";
-
-type TimeLeft = {
-    days: number;
-    hours: number;
-    minutes: number;
-    seconds: number;
-};
+import type { TimeLeft } from "@/types/invitation.type";
 
 // 27 November 2026, 10.00 WIB (UTC+7)
 const WEDDING_DATE = new Date("2026-11-27T10:00:00+07:00").getTime();

@@ -1,6 +1,4 @@
-import { SelectHTMLAttributes } from "react";
-
-type SelectProps = SelectHTMLAttributes<HTMLSelectElement>;
+import type { SelectProps } from "@/types/ui.type";
 
 export default function Select(props: SelectProps) {
     return (

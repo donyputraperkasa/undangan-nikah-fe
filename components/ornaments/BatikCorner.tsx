@@ -1,6 +1,4 @@
-type BatikCornerProps = {
-    position?: "top-left" | "top-right" | "bottom-left" | "bottom-right";
-};
+import type { BatikCornerProps } from "@/types/ornament.type";
 
 export default function BatikCorner({
     position = "top-left",

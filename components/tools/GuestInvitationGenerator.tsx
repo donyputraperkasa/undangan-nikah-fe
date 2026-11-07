@@ -2,6 +2,7 @@
 
 import { Smartphone } from "lucide-react";
 import { useMemo, useState, useSyncExternalStore } from "react";
+import type { CopiedType } from "@/types/invitation.type";
 import InvitationSharePreview from "./InvitationSharePreview";
 
 function normalizeWhatsAppNumber(value: string) {
@@ -29,7 +30,7 @@ export default function GuestInvitationGenerator() {
     const [slug, setSlug] = useState("nugroho-agata");
     const [guestName, setGuestName] = useState("");
     const [phone, setPhone] = useState("");
-    const [copied, setCopied] = useState<"link" | "message" | null>(null);
+    const [copied, setCopied] = useState<CopiedType>(null);
 
     const invitationUrl = useMemo(() => {
         if (!origin || !slug.trim() || !guestName.trim()) return "";

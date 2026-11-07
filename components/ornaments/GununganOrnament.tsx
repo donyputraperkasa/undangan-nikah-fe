@@ -1,8 +1,4 @@
-type GununganOrnamentProps = {
-    className?: string;
-    variant?: "full" | "side-left" | "side-right";
-    color?: string;
-};
+import type { GununganOrnamentProps } from "@/types/ornament.type";
 
 export default function GununganOrnament({
     className = "",

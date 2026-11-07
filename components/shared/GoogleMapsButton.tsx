@@ -1,8 +1,5 @@
 import Button from "../ui/Button";
-
-type GoogleMapsButtonProps = {
-    link: string;
-};
+import type { GoogleMapsButtonProps } from "@/types/invitation.type";
 
 export default function GoogleMapsButton({
     link,

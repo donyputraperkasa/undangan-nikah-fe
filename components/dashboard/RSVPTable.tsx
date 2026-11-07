@@ -1,13 +1,5 @@
 import { RefreshCw, UserCheck, UserX, Users } from "lucide-react";
-import type { RSVPType } from "@/types/rsvp.type";
-
-type RSVPTableProps = {
-    loading: boolean;
-    totalCount: number;
-    rsvps: RSVPType[];
-    searchQuery: string;
-    formatDate: (dateStr?: string) => string;
-};
+import type { RSVPTableProps } from "@/types/dashboard.type";
 
 export default function RSVPTable({
     loading,

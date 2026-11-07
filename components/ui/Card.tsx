@@ -1,9 +1,4 @@
-import { ReactNode } from "react";
-
-type CardProps = {
-    children: ReactNode;
-    className?: string;
-};
+import type { CardProps } from "@/types/ui.type";
 
 export default function Card({
     children,

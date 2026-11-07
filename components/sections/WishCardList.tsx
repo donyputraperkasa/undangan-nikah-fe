@@ -1,8 +1,4 @@
-import type { WishType } from "@/types/wishes.type";
-
-type WishCardListProps = {
-    wishes: WishType[];
-};
+import type { WishCardListProps } from "@/types/wishes.type";
 
 export default function WishCardList({ wishes }: WishCardListProps) {
     if (!Array.isArray(wishes) || wishes.length === 0) {

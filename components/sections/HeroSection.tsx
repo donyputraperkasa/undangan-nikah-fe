@@ -3,10 +3,7 @@
 import { CalendarDays, ChevronDown, MailOpen } from "lucide-react";
 import GununganOrnament from "../ornaments/GununganOrnament";
 import FloralWreath from "../ornaments/FloralWreath";
-
-type HeroSectionProps = {
-    guestName?: string;
-};
+import type { HeroSectionProps } from "@/types/invitation.type";
 
 export default function HeroSection({ guestName = "Tamu Undangan" }: HeroSectionProps) {
     const handleOpenInvitation = () => {

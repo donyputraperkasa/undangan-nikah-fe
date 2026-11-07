@@ -1,10 +1,5 @@
-import { ReactNode } from "react";
+import type { FloralWreathProps } from "@/types/ornament.type";
 import { FloralWreathDefs, WreathButterflies } from "./FloralWreathParts";
-
-type FloralWreathProps = {
-    children?: ReactNode;
-    className?: string;
-};
 
 export default function FloralWreath({ children, className = "" }: FloralWreathProps) {
     return (

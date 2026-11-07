@@ -1,10 +1,4 @@
-import { ReactNode } from "react";
-
-type ModalProps = {
-    isOpen: boolean;
-    onClose: () => void;
-    children: ReactNode;
-};
+import type { ModalProps } from "@/types/ui.type";
 
 export default function Modal({
     isOpen,

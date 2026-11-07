@@ -1,11 +1,5 @@
 import { Heart, UserCheck, UserX, Users } from "lucide-react";
-
-type DashboardStatsProps = {
-    totalWishes: number;
-    totalAttending: number;
-    totalNotAttending: number;
-    totalGuestsAttending: number;
-};
+import type { DashboardStatsProps } from "@/types/dashboard.type";
 
 export default function DashboardStats({
     totalWishes,

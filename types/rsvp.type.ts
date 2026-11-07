@@ -22,3 +22,14 @@ export type CreateRSVPType = {
     attendance: string;
     totalGuest: number;
 };
+
+export type RSVPPayload = CreateRSVPType;
+
+export type RSVPSectionProps = {
+    guestName?: string;
+};
+
+export type RSVPSubmittedViewProps = {
+    name: string;
+    onReset: () => void;
+};
