@@ -13,11 +13,9 @@ export default function EventSection() {
                 <p className="text-xs md:text-sm tracking-[0.4em] uppercase text-[#A67C52] font-semibold mb-3">
                     Rangkaian Acara
                 </p>
-
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#2E335B] leading-tight mb-4">
                     Hari Bahagia Kami
                 </h2>
-
                 <p className="text-[#6B5E78] leading-relaxed text-sm md:text-base max-w-lg mx-auto">
                     Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada:
                 </p>
@@ -34,28 +32,18 @@ export default function EventSection() {
                         <span className="inline-block rounded-full bg-[#FAF4EB] border border-[#E6DCCE] px-4 py-1 text-[11px] font-bold tracking-[0.25em] text-[#A67C52] uppercase mb-4">
                             Pemberkatan
                         </span>
-
                         <div className="space-y-2 mb-6 text-[#463853]">
-                            <p className="text-base sm:text-lg font-medium">
-                                Jumat, 27 November 2026
-                            </p>
-
+                            <p className="text-base sm:text-lg font-medium">Jumat, 27 November 2026</p>
                             <div className="flex items-center justify-center gap-2 text-sm font-semibold text-[#5B4B8A]">
-                                <Clock size={16} />
-                                <span>Pukul 10.00 WIB</span>
+                                <Clock size={16} /> <span>Pukul 10.00 WIB</span>
                             </div>
                         </div>
-
                         <div className="h-px w-16 bg-[#A67C52]/30 mx-auto mb-6" />
-
                         <div className="space-y-1.5 mb-8">
                             <p className="text-lg font-serif font-semibold text-[#2E335B] flex items-center justify-center gap-2">
-                                <MapPin size={18} className="text-[#A67C52] shrink-0" />
-                                Gereja St. Paulus Nganjuk
+                                <MapPin size={18} className="text-[#A67C52] shrink-0" /> Gereja St. Paulus Nganjuk
                             </p>
-                            <p className="text-xs sm:text-sm text-[#726558]">
-                                Kabupaten Nganjuk, Jawa Timur
-                            </p>
+                            <p className="text-xs sm:text-sm text-[#726558]">Kabupaten Nganjuk, Jawa Timur</p>
                         </div>
                     </div>
 
@@ -78,34 +66,23 @@ export default function EventSection() {
                         <span className="inline-block rounded-full bg-[#FAF4EB] border border-[#E6DCCE] px-4 py-1 text-[11px] font-bold tracking-[0.25em] text-[#A67C52] uppercase mb-4">
                             Resepsi
                         </span>
-
                         <div className="space-y-2 mb-6 text-[#463853]">
-                            <p className="text-base sm:text-lg font-medium">
-                                Jumat, 27 November 2026
-                            </p>
-
+                            <p className="text-base sm:text-lg font-medium">Jumat, 27 November 2026</p>
                             <div className="flex flex-col items-center justify-center gap-1.5 text-sm font-semibold text-[#5B4B8A]">
                                 <div className="flex items-center justify-center gap-2">
-                                    <Clock size={15} />
-                                    <span>Sesi 1 : 17.00 – 19.00 WIB</span>
+                                    <Clock size={15} /> <span>Sesi 1 : 17.00 – 19.00 WIB</span>
                                 </div>
                                 <div className="flex items-center justify-center gap-2">
-                                    <Clock size={15} />
-                                    <span>Sesi 2 : 19.00 – 21.00 WIB</span>
+                                    <Clock size={15} /> <span>Sesi 2 : 19.00 – 21.00 WIB</span>
                                 </div>
                             </div>
                         </div>
-
                         <div className="h-px w-16 bg-[#A67C52]/30 mx-auto mb-6" />
-
                         <div className="space-y-1.5 mb-8">
                             <p className="text-lg font-serif font-semibold text-[#2E335B] flex items-center justify-center gap-2">
-                                <MapPin size={18} className="text-[#A67C52] shrink-0" />
-                                Balai Desa Kelurahan Semampir
+                                <MapPin size={18} className="text-[#A67C52] shrink-0" /> Balai Desa Kelurahan Semampir
                             </p>
-                            <p className="text-xs sm:text-sm text-[#726558]">
-                                Kota Kediri, Jawa Timur
-                            </p>
+                            <p className="text-xs sm:text-sm text-[#726558]">Kota Kediri, Jawa Timur</p>
                         </div>
                     </div>
 

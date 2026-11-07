@@ -1,20 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-import Button from "../ui/Button";
-import {
-    createWish,
-    getWishes,
-} from "../../services/wishes.service";
+import { createWish, getWishes } from "../../services/wishes.service";
 import type { WishType } from "@/types/wishes.type";
+import WishCardList from "./WishCardList";
 
 type WishSectionProps = {
     guestName?: string;
 };
 
 export default function WishSection({ guestName = "" }: WishSectionProps) {
-
     const initialName = guestName === "Tamu Undangan" ? "" : guestName;
     const [name, setName] = useState(initialName);
     const [message, setMessage] = useState("");
@@ -24,14 +19,7 @@ export default function WishSection({ guestName = "" }: WishSectionProps) {
     async function fetchWishes() {
         try {
             const data = await getWishes();
-
-            if (Array.isArray(data)) {
-                setWishes(data);
-            } else if (Array.isArray(data.data)) {
-                setWishes(data.data);
-            } else {
-                setWishes([]);
-            }
+            setWishes(Array.isArray(data) ? data : Array.isArray(data?.data) ? data.data : []);
         } catch (error) {
             console.error("Failed to fetch wishes", error);
         }
@@ -39,19 +27,12 @@ export default function WishSection({ guestName = "" }: WishSectionProps) {
 
     async function handleSubmit() {
         if (!name || !message) return;
-
         try {
             setLoading(true);
-
-            await createWish({
-                name,
-                message,
-            });
-
+            await createWish({ name, message });
             setName("");
             setMessage("");
-
-            fetchWishes();
+            void fetchWishes();
         } catch (error) {
             console.error("Failed to create wish", error);
         } finally {
@@ -61,26 +42,12 @@ export default function WishSection({ guestName = "" }: WishSectionProps) {
 
     useEffect(() => {
         let active = true;
-
         void getWishes()
             .then((data) => {
-                if (!active) return;
-
-                if (Array.isArray(data)) {
-                    setWishes(data);
-                } else if (Array.isArray(data.data)) {
-                    setWishes(data.data);
-                } else {
-                    setWishes([]);
-                }
+                if (active) setWishes(Array.isArray(data) ? data : Array.isArray(data?.data) ? data.data : []);
             })
-            .catch((error) => {
-                console.error("Failed to fetch wishes", error);
-            });
-
-        return () => {
-            active = false;
-        };
+            .catch((error) => console.error("Failed to fetch wishes", error));
+        return () => { active = false; };
     }, []);
 
     return (
@@ -101,11 +68,8 @@ export default function WishSection({ guestName = "" }: WishSectionProps) {
             {/* Form Wishes */}
             <div className="w-full max-w-lg rounded-[2rem] border border-[#E6DCCE] bg-white/90 p-8 md:p-10 shadow-xl shadow-[#A67C52]/5 mb-14 backdrop-blur">
                 <div className="flex flex-col gap-5">
-                    {/* Input Name */}
                     <div className="space-y-2 text-left">
-                        <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#A67C52]">
-                            Nama Anda
-                        </label>
+                        <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#A67C52]">Nama Anda</label>
                         <input
                             type="text"
                             placeholder="Tuliskan nama Anda"
@@ -114,11 +78,8 @@ export default function WishSection({ guestName = "" }: WishSectionProps) {
                             className="w-full rounded-2xl border border-[#E6DCCE] bg-[#FAF4EB] px-5 py-3.5 text-sm text-[#2E335B] placeholder:text-[#A89B8E] outline-none focus:border-[#5B4B8A] focus:ring-4 focus:ring-[#5B4B8A]/10 transition-all"
                         />
                     </div>
-                    {/* Input Wishes */}
                     <div className="space-y-2 text-left">
-                        <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#A67C52]">
-                            Pesan / Doa
-                        </label>
+                        <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#A67C52]">Pesan / Doa</label>
                         <textarea
                             placeholder="Tuliskan ucapan dan doa restu untuk Agata & Nugroho..."
                             value={message}
@@ -127,7 +88,6 @@ export default function WishSection({ guestName = "" }: WishSectionProps) {
                             className="w-full rounded-2xl border border-[#E6DCCE] bg-[#FAF4EB] px-5 py-3.5 text-sm text-[#2E335B] placeholder:text-[#A89B8E] outline-none resize-none focus:border-[#5B4B8A] focus:ring-4 focus:ring-[#5B4B8A]/10 transition-all"
                         />
                     </div>
-                    {/* Submit Button */}
                     <div className="pt-2 flex justify-center">
                         <button
                             type="button"
@@ -143,39 +103,7 @@ export default function WishSection({ guestName = "" }: WishSectionProps) {
 
             {/* List Wishes */}
             <div className="w-full max-w-lg flex flex-col gap-3">
-                {Array.isArray(wishes) && wishes.length > 0 ? (
-                    wishes.map((wish, index) => (
-                        <div
-                            key={wish.id ?? index}
-                            className="group w-full bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-sm border border-[#E6DCCE] text-left transition-all hover:shadow-md"
-                        >
-                            <div className="flex items-center gap-3.5 mb-3">
-                                <div className="size-10 shrink-0 rounded-full bg-[#5B4B8A]/10 flex items-center justify-center text-[#5B4B8A] font-serif font-bold italic border border-[#5B4B8A]/20 uppercase">
-                                    {(wish.name || wish.guestName || "T").charAt(0)}
-                                </div>
-
-                                <div className="flex flex-col">
-                                    <p className="text-base font-serif font-bold text-[#2E335B] leading-tight">
-                                        {wish.name || wish.guestName}
-                                    </p>
-                                    <p className="text-[10px] text-[#A67C52] uppercase tracking-[0.2em] mt-0.5">
-                                        Tamu Undangan
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="relative pl-3 border-l-2 border-[#5B4B8A]/30">
-                                <p className="text-sm text-[#463853] leading-relaxed italic">
-                                    &ldquo;{wish.message}&rdquo;
-                                </p>
-                            </div>
-                        </div>
-                    ))
-                ) : (
-                    <p className="text-sm text-[#726558] italic py-4">
-                        Belum ada ucapan. Jadilah yang pertama mengirimkan doa restu!
-                    </p>
-                )}
+                <WishCardList wishes={wishes} />
             </div>
         </section>
     );
